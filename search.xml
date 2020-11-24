@@ -22,6 +22,14 @@
     <title>t3</title>
     <url>/2020/11/24/t3/</url>
     <content><![CDATA[]]></content>
+      <categories>
+        <category>xx</category>
+        <category>ww</category>
+      </categories>
+      <tags>
+        <tag>zk</tag>
+        <tag>kafka</tag>
+      </tags>
   </entry>
   <entry>
     <title>test</title>
