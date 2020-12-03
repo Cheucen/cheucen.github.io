@@ -27,8 +27,8 @@
       </tags>
   </entry>
   <entry>
-    <title>pit</title>
-    <url>/2020/12/03/some_pit/</url>
+    <title>some_pit</title>
+    <url>/2020/11/24/some_pit/</url>
     <content><![CDATA[<p>目录</p>
 <p><a href="#_Toc42539336">第1章    项目涉及技术    12</a></p>
 <blockquote>
@@ -1751,7 +1751,7 @@
 <p>set hive.map.aggr=true；</p>
 <p><strong>10）压缩（选择快的）</strong></p>
 <p>设置map端输出、中间结果压缩。（不完全是解决数据倾斜的问题，但是减少了IO读写和网络传输，能提高很多效率）</p>
-<p>set hive.exec.compress.intermediate=true –启用中间数据压缩</p>
+<p>set hive.exec.compress.inter./some_pitte=true –启用中间数据压缩</p>
 <p>set mapreduce.map.output.compress=true –启用最终数据压缩</p>
 <p>set mapreduce.map.outout.compress.codec=…; –设置压缩方式</p>
 <p><strong>11）采用tez引擎或者spark引擎</strong></p>
