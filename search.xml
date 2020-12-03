@@ -28,7 +28,7 @@
   </entry>
   <entry>
     <title>some_pit</title>
-    <url>/2020/12/03/some_pit/</url>
+    <url>/2020/12/04/some_pit/</url>
     <content><![CDATA[<p>目录</p>
 <p><a href="#_Toc42539336">第1章    项目涉及技术    12</a></p>
 <blockquote>
@@ -1372,7 +1372,7 @@
 <p>（8）增加每个Container的CPU核数和内存大小</p>
 <p>（9）在hdfs-site.xml文件中配置多目录（多磁盘）</p>
 <p>（10）NameNode有一个工作线程池，用来处理不同DataNode的并发心跳以及客户端并发的元数据操作。dfs.namenode.handler.count=</p>
-<p><img src="/.com//04d6f8637383ea0dc5752b70e2f93622.png"></p>
+<p><img src="/2020/12/04/some_pit/04d6f8637383ea0dc5752b70e2f93622.png"></p>
 <p>，，比如集群规模为8台时，此参数设置为41。可通过简单的python代码计算该值，代码如下。</p>
 <blockquote>
 <p>  [atguigu@hadoop102 ~]$ python</p>
@@ -1544,7 +1544,7 @@
 <p>如果是MemoryChannel有可能丢。</p>
 <h2 id="1-5-Kafka"><a href="#1-5-Kafka" class="headerlink" title="1.5 Kafka"></a>1.5 Kafka</h2><h3 id="1-5-1-Kafka架构"><a href="#1-5-1-Kafka架构" class="headerlink" title="1.5.1 Kafka架构"></a>1.5.1 Kafka架构</h3><p>生产者、Broker、消费者、ZK；</p>
 <p>注意：Zookeeper中保存Broker id和消费者offsets等信息，但是没有生产者信息。</p>
-<p><img src="/.com//4c9a71cc86e2271661cd8013ad01e0d8.png"></p>
+<p><img src="/2020/12/04/some_pit/4c9a71cc86e2271661cd8013ad01e0d8.png" alt="4c9a71cc86e2271661cd8013ad01e0d8.png"></p>
 <h3 id="1-5-2-Kafka的机器数量"><a href="#1-5-2-Kafka的机器数量" class="headerlink" title="1.5.2 Kafka的机器数量"></a>1.5.2 Kafka的机器数量</h3><p>Kafka机器数量=2*（峰值生产速度*副本数/100）+ 1</p>
 <h3 id="1-5-3-副本数设定"><a href="#1-5-3-副本数设定" class="headerlink" title="1.5.3 副本数设定"></a>1.5.3 副本数设定</h3><p>一般我们设置成2个或3个，很多企业设置为2个。</p>
 <p>副本的优势：提高可靠性；副本劣势：增加了网络IO传输</p>
@@ -1650,7 +1650,7 @@
 <h3 id="1-5-21-Kafka可以按照时间消费数据"><a href="#1-5-21-Kafka可以按照时间消费数据" class="headerlink" title="1.5.21 Kafka可以按照时间消费数据"></a>1.5.21 Kafka可以按照时间消费数据</h3><p>Map&lt;TopicPartition, OffsetAndTimestamp&gt; startOffsetMap =<br>KafkaUtil.fetchOffsetsWithTimestamp(topic, sTime, kafkaProp);</p>
 <h3 id="1-5-22-Kafka消费者角度考虑是拉取数据还是推送数据"><a href="#1-5-22-Kafka消费者角度考虑是拉取数据还是推送数据" class="headerlink" title="1.5.22 Kafka消费者角度考虑是拉取数据还是推送数据"></a>1.5.22 Kafka消费者角度考虑是拉取数据还是推送数据</h3><p>拉取数据</p>
 <h3 id="1-5-23-Kafka中的数据是有序的吗"><a href="#1-5-23-Kafka中的数据是有序的吗" class="headerlink" title="1.5.23 Kafka中的数据是有序的吗"></a>1.5.23 Kafka中的数据是有序的吗</h3><p>单分区内有序；多分区，分区与分区间无序；</p>
-<h2 id="1-6-Hive"><a href="#1-6-Hive" class="headerlink" title="1.6 Hive"></a>1.6 Hive</h2><h3 id="1-6-1-Hive的架构"><a href="#1-6-1-Hive的架构" class="headerlink" title="1.6.1 Hive的架构"></a>1.6.1 Hive的架构</h3><p><img src="/.com//f8c18c9c9fa3df8aa30d1297184e7406.png"></p>
+<h2 id="1-6-Hive"><a href="#1-6-Hive" class="headerlink" title="1.6 Hive"></a>1.6 Hive</h2><h3 id="1-6-1-Hive的架构"><a href="#1-6-1-Hive的架构" class="headerlink" title="1.6.1 Hive的架构"></a>1.6.1 Hive的架构</h3><p><img src="/2020/12/04/some_pit/f8c18c9c9fa3df8aa30d1297184e7406.png"></p>
 <blockquote>
 <p>  图片</p>
 </blockquote>
@@ -1756,8 +1756,8 @@
 <p>set mapreduce.map.outout.compress.codec=…; –设置压缩方式</p>
 <p><strong>11）采用tez引擎或者spark引擎</strong></p>
 <h3 id="1-6-9-Hive解决数据倾斜方法"><a href="#1-6-9-Hive解决数据倾斜方法" class="headerlink" title="1.6.9 Hive解决数据倾斜方法"></a>1.6.9 Hive解决数据倾斜方法</h3><p><strong>1）数据倾斜长啥样？</strong></p>
-<p><img src="/.com//22038bef2feb5c0ece38a55c53d9943a.jpeg"></p>
-<p><img src="/.com//9047befedb8470e10af55e1a1bf15038.jpeg"></p>
+<p><img src="/2020/12/04/some_pit/22038bef2feb5c0ece38a55c53d9943a.jpeg" alt="22038bef2feb5c0ece38a55c53d9943a.jpeg"></p>
+<p><img src="/2020/12/04/some_pit/9047befedb8470e10af55e1a1bf15038.jpeg" alt="9047befedb8470e10af55e1a1bf15038.jpeg"></p>
 <p><strong>2）怎么产生的数据倾斜？</strong></p>
 <p><strong>（1）不同数据类型关联产生数据倾斜</strong></p>
 <p>情形：比如用户表中user_id字段为int，log表中user_id字段string类型。当按照user_id进行两个表的Join操作时。</p>
@@ -1800,9 +1800,9 @@
 <p>MySQL的utf8编码最多存储3个字节，当数据中存在表情号、特色符号时会占用超过3个字节数的字节，那么会出现错误<br>Incorrect string value: ‘\xF0\x9F\x91\x91\xE5\xB0…’</p>
 <p>解决办法：将utf8修改为utf8mb4</p>
 <p>首先修改库的基字符集和数据库排序规则</p>
-<p><img src="/.com//21c1691a0e2547efd21261d03fb87175.png" alt="e46516d3561eea6523d980c7af9eadd"></p>
+<p><img src="/2020/12/04/some_pit/21c1691a0e2547efd21261d03fb87175.png" alt="e46516d3561eea6523d980c7af9eadd"></p>
 <p>再使用 SHOW VARIABLES LIKE ‘%char%’; 命令查看参数</p>
-<p><img src="/.com//c3e2091b70b6d0ab6817ab7528e547bd.png"></p>
+<p><img src="/2020/12/04/some_pit/c3e2091b70b6d0ab6817ab7528e547bd.png" alt="c3e2091b70b6d0ab6817ab7528e547bd.png"></p>
 <p>确保这几个参数的value值为utf8mb4 如果不是使用set命令修改</p>
 <p>如：set character_set_server = utf8mb4;</p>
 <h3 id="1-6-13-Union与Union-all区别"><a href="#1-6-13-Union与Union-all区别" class="headerlink" title="1.6.13 Union与Union all区别"></a>1.6.13 Union与Union all区别</h3><p>1）union会将联合的结果集去重，效率较union all差</p>
@@ -1949,7 +1949,7 @@
 <p>普通的SortShuffle：</p>
 <p>当 shuffle read task 的 数 量 小 于 等 于 spark.shuffle.sort。</p>
 <p>bypassMergeThreshold 参数的值时（默认为 200），就会启用 bypass 机制。</p>
-<p><img src="/.com//c6bf5aab850855e1110b69a39e3914ca.png" alt="图片"></p>
+<p><img src="/2020/12/04/some_pit/c6bf5aab850855e1110b69a39e3914ca.png" alt="图片"></p>
 <h3 id="1-11-11-Spark常用算子reduceByKey与groupByKey的区别，哪一种更具优势？（重点）"><a href="#1-11-11-Spark常用算子reduceByKey与groupByKey的区别，哪一种更具优势？（重点）" class="headerlink" title="1.11.11 Spark常用算子reduceByKey与groupByKey的区别，哪一种更具优势？（重点）"></a>1.11.11 Spark常用算子reduceByKey与groupByKey的区别，哪一种更具优势？（重点）</h3><p>reduceByKey：按照key进行聚合，在shuffle之前有combine（预聚合）操作，返回结果是RDD[k,v]。</p>
 <p>groupByKey：按照key进行分组，直接进行shuffle。</p>
 <p>开发指导：reduceByKey比groupByKey，建议使用。但是需要注意是否会影响业务逻辑。</p>
@@ -2074,7 +2074,7 @@
 <p>他们在做数据运算的时候会涉及到，count distinct、group by、join<br>on等操作，这些都会触发Shuffle动作。一旦触发Shuffle，所有相同key的值就会被拉到一个或几个Reducer节点上，容易发生单点计算问题，导致数据倾斜。</p>
 <p>一般来说，数据倾斜原因有以下几方面：</p>
 <p><strong>1）key分布不均匀；</strong></p>
-<p><img src="/.com//e4f6302e7d33be29c0c23a12004868bf.png"></p>
+<p><img src="/2020/12/04/some_pit/e4f6302e7d33be29c0c23a12004868bf.png" alt="e4f6302e7d33be29c0c23a12004868bf.png"></p>
 <p><strong>2）建表时考虑不周</strong></p>
 <p>我们举一个例子，就说数据默认值的设计吧，假设我们有两张表：</p>
 <p>user（用户信息表）：userid，register_ip</p>
@@ -2163,7 +2163,7 @@
 <h5 id="1-13-6-3-2-方案实现思路"><a href="#1-13-6-3-2-方案实现思路" class="headerlink" title="1.13.6.3.2 方案实现思路"></a>1.13.6.3.2 方案实现思路</h5><p>在对RDD执行shuffle算子时，给shuffle算子传入一个参数，比如reduceByKey(1000)，该参数就设置了这个shuffle算子执行时shuffle<br>read task的数量，即spark.sql.shuffle.partitions，该参数代表了shuffle read<br>task的并行度，默认是200，对于很多场景来说都有点过小。</p>
 <h5 id="1-13-6-3-3-方案实现原理"><a href="#1-13-6-3-3-方案实现原理" class="headerlink" title="1.13.6.3.3 方案实现原理"></a>1.13.6.3.3 方案实现原理</h5><p>增加shuffle read<br>task的数量，可以让原本分配给一个task的多个key分配给多个task，从而让每个task处理比原来更少的数据。举例来说，如果原本有5个key，每个key对应10条数据，这5个key都是分配给一个task的，那么这个task就要处理50条数据。</p>
 <p>而增加了shuffle read<br>task以后，每个task就分配到一个key，即每个task就处理10条数据，那么自然每个task的执行时间都会变短了。具体原理如下图所示。</p>
-<p><img src="/.com//66bb55ccd97c524fa13fbf888b94255d.png"></p>
+<p><img src="/2020/12/04/some_pit/66bb55ccd97c524fa13fbf888b94255d.png"></p>
 <h5 id="1-13-6-3-4-方案优缺点"><a href="#1-13-6-3-4-方案优缺点" class="headerlink" title="1.13.6.3.4 方案优缺点"></a>1.13.6.3.4 方案优缺点</h5><p>优点：实现起来比较简单，可以有效缓解和减轻数据倾斜的影响。</p>
 <p>缺点：只是缓解了数据倾斜而已，没有彻底根除问题，根据实践经验来看，其效果有限。</p>
 <h5 id="1-13-6-3-5-方案实践经验"><a href="#1-13-6-3-5-方案实践经验" class="headerlink" title="1.13.6.3.5 方案实践经验"></a>1.13.6.3.5 方案实践经验</h5><p>该方案通常无法彻底解决数据倾斜，因为如果出现一些极端情况，比如某个key对应的数据量有100万，那么无论你的task数量增加到多少，这个对应着100万数据的key肯定还是会分配到一个task中去处理，因此注定还是会发生数据倾斜的。所以这种方案只能说是在发现数据倾斜时尝试使用的第一种手段，尝试去用最简单的方法缓解数据倾斜而已，或者是和其他方案结合起来使用。</p>
@@ -2184,7 +2184,7 @@
 <p>// 第三步，去除RDD中每个key的随机前缀。<br>JavaPairRDD&lt;Long, Long&gt; removedRandomPrefixRdd = localAggrRdd.mapToPair(<br>new PairFunction&lt;Tuple2&lt;String,Long&gt;, Long, Long&gt;() {<br>private static final long serialVersionUID = 1L;<br>@Override<br>public Tuple2&lt;Long, Long&gt; call(Tuple2&lt;String, Long&gt; tuple)<br>throws Exception {<br>long originalKey = Long.valueOf(tuple.<em>1.split(“</em>“)[1]);<br>return new Tuple2&lt;Long, Long&gt;(originalKey, tuple._2);<br>}<br>});  </p>
 <p>// 第四步，对去除了随机前缀的RDD进行全局聚合。<br>JavaPairRDD&lt;Long, Long&gt; globalAggrRdd = removedRandomPrefixRdd.reduceByKey(<br>new Function2&lt;Long, Long, Long&gt;() {<br>private static final long serialVersionUID = 1L;<br>@Override<br>public Long call(Long v1, Long v2) throws Exception {<br>return v1 + v2;<br>}<br>});</p>
 <h5 id="1-13-6-4-3-方案实现原理"><a href="#1-13-6-4-3-方案实现原理" class="headerlink" title="1.13.6.4.3 方案实现原理"></a>1.13.6.4.3 方案实现原理</h5><p>将原本相同的key通过附加随机前缀的方式，变成多个不同的key，就可以让原本被一个task处理的数据分散到多个task上去做局部聚合，进而解决单个task处理数据量过多的问题。接着去除掉随机前缀，再次进行全局聚合，就可以得到最终的结果。具体原理见下图。</p>
-<p><img src="/.com//0413e3961ff5780673df09d46ebc1679.png"></p>
+<p><img src="/2020/12/04/some_pit/0413e3961ff5780673df09d46ebc1679.png"></p>
 <h5 id="1-13-6-4-4-方案优缺点"><a href="#1-13-6-4-4-方案优缺点" class="headerlink" title="1.13.6.4.4 方案优缺点"></a>1.13.6.4.4 方案优缺点</h5><p>优点<br>对于聚合类的shuffle操作导致的数据倾斜，效果是非常不错的。通常都可以解决掉数据倾斜，或者至少是大幅度缓解数据倾斜，将Spark作业的性能提升数倍以上。</p>
 <p>缺点<br>仅仅适用于聚合类的shuffle操作，适用范围相对较窄。如果是join类的shuffle操作，还得用其他的解决方案。</p>
 <h4 id="1-13-6-5-将reduce-join转为map-join"><a href="#1-13-6-5-将reduce-join转为map-join" class="headerlink" title="1.13.6.5 将reduce join转为map join"></a>1.13.6.5 将reduce join转为map join</h4><h5 id="1-13-6-5-1-方案适用场景"><a href="#1-13-6-5-1-方案适用场景" class="headerlink" title="1.13.6.5.1 方案适用场景"></a>1.13.6.5.1 方案适用场景</h5><p>在对RDD使用join类操作，或者是在Spark<br>SQL中使用join语句时，而且join操作中的一个RDD或表的数据量比较小（比如几百M或者一两G），比较适用此方案。</p>
@@ -2196,7 +2196,7 @@
 <p>// 这里得提示一下。<br>// 上面的做法，仅仅适用于rdd1中的key没有重复，全部是唯一的场景。<br>//<br>如果rdd1中有多个相同的key，那么就得用flatMap类的操作，在进行join的时候不能用map，而是得遍历rdd1所有数据进行join。<br>// rdd2中每条数据都可能会返回多条join后的数据。</p>
 <h5 id="1-13-6-5-3-方案实现原理"><a href="#1-13-6-5-3-方案实现原理" class="headerlink" title="1.13.6.5.3 方案实现原理"></a>1.13.6.5.3 方案实现原理</h5><p>普通的join是会走shuffle过程的，而一旦shuffle，就相当于会将相同key的数据拉取到一个shuffle<br>read task中再进行join，此时就是reduce join。</p>
 <p>但是如果一个RDD是比较小的，则可以采用广播小RDD全量数据+map算子来实现与join同样的效果，也就是map<br>join，此时就不会发生shuffle操作，也就不会发生数据倾斜。具体原理如下图所示。</p>
-<p><img src="/.com//9010c275399ee03d0de99aaae438f409.png"></p>
+<p><img src="/2020/12/04/some_pit/9010c275399ee03d0de99aaae438f409.png"></p>
 <h5 id="1-13-6-5-4-方案优缺点"><a href="#1-13-6-5-4-方案优缺点" class="headerlink" title="1.13.6.5.4 方案优缺点"></a>1.13.6.5.4 方案优缺点</h5><p>优点：对join操作导致的数据倾斜，效果非常好，因为根本就不会发生shuffle，也就根本不会发生数据倾斜。</p>
 <p>缺点：适用场景较少，因为这个方案只适用于一个大表和一个小表的情况。毕竟我们需要将小表进行广播，此时会比较消耗内存资源，driver和每个Executor内存中都会驻留一份小RDD的全量数据。如果我们广播出去的RDD数据比较大，比如10G以上，那么就可能发生内存溢出了。因此并不适合两个都是大表的情况。</p>
 <h4 id="1-13-6-6-采样倾斜key并分拆join操作"><a href="#1-13-6-6-采样倾斜key并分拆join操作" class="headerlink" title="1.13.6.6 采样倾斜key并分拆join操作"></a>1.13.6.6 采样倾斜key并分拆join操作</h4><h5 id="1-13-6-6-1-方案适用场景"><a href="#1-13-6-6-1-方案适用场景" class="headerlink" title="1.13.6.6.1 方案适用场景"></a>1.13.6.6.1 方案适用场景</h5><p>两个RDD/Hive表进行join的时候，如果数据量都比较大，无法采用“解决方案五”，那么此时可以看一下两个RDD/Hive表中的key分布情况。</p>
@@ -2224,7 +2224,7 @@
 <p>// 将rdd1中分拆出来的包含普通key的独立rdd，直接与rdd2进行join。<br>JavaPairRDD&lt;Long, Tuple2&lt;String, Row&gt;&gt; joinedRDD2 = commonRDD.join(rdd2);  </p>
 <p>// 将倾斜key join后的结果与普通key join后的结果，uinon起来。<br>// 就是最终的join结果。<br>JavaPairRDD&lt;Long, Tuple2&lt;String, Row&gt;&gt; joinedRDD =<br>joinedRDD1.union(joinedRDD2);</p>
 <h5 id="1-13-6-6-3-方案实现原理"><a href="#1-13-6-6-3-方案实现原理" class="headerlink" title="1.13.6.6.3 方案实现原理"></a>1.13.6.6.3 方案实现原理</h5><p>对于join导致的数据倾斜，如果只是某几个key导致了倾斜，可以将少数几个key分拆成独立RDD，并附加随机前缀打散成n份去进行join，此时这几个key对应的数据就不会集中在少数几个task上，而是分散到多个task进行join了。具体原理见下图。</p>
-<p><img src="/.com//37dade51eedfda4a2b3f0f776e2017b9.png"></p>
+<p><img src="/2020/12/04/some_pit/37dade51eedfda4a2b3f0f776e2017b9.png"></p>
 <h5 id="1-13-6-6-4-方案优缺点"><a href="#1-13-6-6-4-方案优缺点" class="headerlink" title="1.13.6.6.4 方案优缺点"></a>1.13.6.6.4 方案优缺点</h5><p>优点：对于join导致的数据倾斜，如果只是某几个key导致了倾斜，采用该方式可以用最有效的方式打散key进行join。而且只需要针对少数倾斜key对应的数据进行扩容n倍，不需要对全量数据进行扩容。避免了占用过多内存。</p>
 <p>缺点：如果导致倾斜的key特别多的话，比如成千上万个key都导致数据倾斜，那么这种方式也不适合。</p>
 <h4 id="1-13-6-7-使用随机前缀和扩容RDD进行join"><a href="#1-13-6-7-使用随机前缀和扩容RDD进行join" class="headerlink" title="1.13.6.7 使用随机前缀和扩容RDD进行join"></a>1.13.6.7 使用随机前缀和扩容RDD进行join</h4><h5 id="1-13-6-7-1-方案适用场景"><a href="#1-13-6-7-1-方案适用场景" class="headerlink" title="1.13.6.7.1 方案适用场景"></a>1.13.6.7.1 方案适用场景</h5><p>如果在进行join操作时，RDD中有大量的key导致数据倾斜，那么进行分拆key也没什么意义，此时就只能使用最后一种方案来解决问题了。</p>
@@ -2247,7 +2247,7 @@
 <p>其次可以对某些shuffle操作提升并行度，优化其性能；</p>
 <p>最后还可以针对不同的聚合或join操作，选择一种方案来优化其性能。</p>
 <p>大家需要对这些方案的思路和原理都透彻理解之后，在实践中根据各种不同的情况，灵活运用多种方案，来解决自己的数据倾斜问题。</p>
-<h3 id="1-13-7-Spark数据倾斜处理小结"><a href="#1-13-7-Spark数据倾斜处理小结" class="headerlink" title="1.13.7 Spark数据倾斜处理小结"></a>1.13.7 Spark数据倾斜处理小结</h3><p><img src="/.com//7f8113d89efd447800e3120aaa6d39e0.png"></p>
+<h3 id="1-13-7-Spark数据倾斜处理小结"><a href="#1-13-7-Spark数据倾斜处理小结" class="headerlink" title="1.13.7 Spark数据倾斜处理小结"></a>1.13.7 Spark数据倾斜处理小结</h3><p><img src="/2020/12/04/some_pit/7f8113d89efd447800e3120aaa6d39e0.png"></p>
 <h2 id="1-14-Flink"><a href="#1-14-Flink" class="headerlink" title="1.14 Flink"></a>1.14 Flink</h2><h3 id="1-14-1-简单介绍一下-Flink"><a href="#1-14-1-简单介绍一下-Flink" class="headerlink" title="1.14.1 简单介绍一下 Flink"></a>1.14.1 简单介绍一下 Flink</h3><p>Flink 是一个框架和分布式处理引擎，用于对无界和有界数据流进行有状态计算。并且<br>Flink<br>提供了数据分布、容错机制以及资源管理等核心功能。Flink提供了诸多高抽象层的API以便用户编写分布式任务：</p>
 <p>DataSet API，<br>对静态数据进行批处理操作，将静态数据抽象成分布式的数据集，用户可以方便地使用Flink提供的各种操作符对分布式数据集进行处理，支持Java、Scala和Python。</p>
 <p>DataStream<br>API，对数据流进行流处理操作，将流式的数据抽象成分布式的数据流，用户可以方便地对分布式数据流进行各种操作，支持Java和Scala。</p>
@@ -2259,7 +2259,7 @@
 <p>2）任务调度Spark Streaming<br>连续不断的生成微小的数据批次，构建有向无环图DAG，Spark Streaming 会依次创建<br>DStreamGraph、JobGenerator、JobScheduler。Flink 根据用户提交的代码生成<br>StreamGraph，经过优化生成 JobGraph，然后提交给 JobManager进行处理，JobManager<br>会根据 JobGraph 生成 ExecutionGraph，ExecutionGraph 是 Flink<br>调度最核心的数据结构，JobManager 根据 ExecutionGraph 对 Job 进行调度。</p>
 <p>3）时间机制Spark Streaming 支持的时间机制有限，只支持处理时间。 Flink<br>支持了流处理程序在时间上的三个定义：处理时间、事件时间、注入时间。同时也支持<br>watermark 机制来处理滞后数据。</p>
 <p>4）容错机制对于 Spark Streaming 任务，我们可以设置<br>checkpoint，然后假如发生故障并重启，我们可以从上次 checkpoint<br>之处恢复，但是这个行为只能使得数据不丢失，可能会重复处理，不能做到恰好一次处理语义。Flink<br>则使用两阶段提交协议来解决这个问题。</p>
-<h3 id="1-14-3-Flink集群有哪些角色？各自有什么作用？"><a href="#1-14-3-Flink集群有哪些角色？各自有什么作用？" class="headerlink" title="1.14.3 Flink集群有哪些角色？各自有什么作用？"></a>1.14.3 Flink集群有哪些角色？各自有什么作用？</h3><p><img src="/.com//db329173f1e4081c8e06383fdf064e32.png"></p>
+<h3 id="1-14-3-Flink集群有哪些角色？各自有什么作用？"><a href="#1-14-3-Flink集群有哪些角色？各自有什么作用？" class="headerlink" title="1.14.3 Flink集群有哪些角色？各自有什么作用？"></a>1.14.3 Flink集群有哪些角色？各自有什么作用？</h3><p><img src="/2020/12/04/some_pit/db329173f1e4081c8e06383fdf064e32.png" alt="db329173f1e4081c8e06383fdf064e32.png"></p>
 <p>Flink 程序在运行时主要有 TaskManager，JobManager，Client三种角色。</p>
 <p>JobManager扮演着集群中的管理者Master的角色，它是整个集群的协调者，负责接收Flink<br>Job，协调检查点，Failover 故障恢复等，同时管理Flink集群中从节点TaskManager。</p>
 <p>TaskManager是实际负责执行计算的Worker，在其上执行Flink<br>Job的一组Task，每个TaskManager负责管理其所在节点上的资源信息，如内存、磁盘、网络，在启动的时候将资源的状态向JobManager汇报。</p>
@@ -2279,7 +2279,7 @@
 <p>Ingestion Time：是数据进入Flink的时间。</p>
 <p>Processing<br>Time：是每一个执行基于时间操作的算子的本地系统时间，与机器相关，默认的时间属性就是Processing<br>Time。</p>
 <h3 id="1-14-8-说说Flink中的窗口"><a href="#1-14-8-说说Flink中的窗口" class="headerlink" title="1.14.8 说说Flink中的窗口"></a>1.14.8 说说Flink中的窗口</h3><p>来一张官网经典的图：</p>
-<p><img src="/.com//d604970d4df0a3b53ee3176700184a3a.png"></p>
+<p><img src="/2020/12/04/some_pit/d604970d4df0a3b53ee3176700184a3a.png" alt="d604970d4df0a3b53ee3176700184a3a.png"></p>
 <p>Flink<br>支持两种划分窗口的方式，按照time和count。如果根据时间划分窗口，那么它就是一个time-window<br>如果根据数据划分窗口，那么它就是一个count-window。flink支持窗口的两个重要属性（size和interval）如果size=interval,那么就会形成tumbling-window(无重叠数据)<br>如果size&gt;interval,那么就会形成sliding-window(有重叠数据) 如果size&lt; interval,<br>那么这种窗口将会丢失数据。比如每5秒钟，统计过去3秒的通过路口汽车的数据，将会漏掉2秒钟的数据。通过组合可以得出四种基本窗口：</p>
 <p>time-tumbling-window<br>无重叠数据的时间窗口，设置方式举例：timeWindow(Time.seconds(5))</p>
 <p>time-sliding-window<br>有重叠数据的时间窗口，设置方式举例：timeWindow(Time.seconds(5), Time.seconds(3))</p>
@@ -2299,7 +2299,7 @@
 <p>Watermark 是用于处理乱序事件的，而正确的处理乱序事件，通常用Watermark 机制结合<br>window 来实现；</p>
 <p>数据流中的 Watermark 用于表示 timestamp 小于 Watermark<br>的数据，都已经到达了，因此，window 的执行也是由 Watermark 触发的。</p>
 <h3 id="1-14-12-Flink分布式快照的原理是什么"><a href="#1-14-12-Flink分布式快照的原理是什么" class="headerlink" title="1.14.12 Flink分布式快照的原理是什么"></a>1.14.12 Flink分布式快照的原理是什么</h3><p>Flink的容错机制的核心部分是制作分布式数据流和操作算子状态的一致性快照。<br>这些快照充当一致性checkpoint，系统可以在发生故障时回滚。<br>Flink用于制作这些快照的机制在“分布式数据流的轻量级异步快照”中进行了描述。<br>它受到分布式快照的标准Chandy-Lamport算法的启发，专门针对Flink的执行模型而定制。</p>
-<p><img src="/.com//fe245e67357ede3ce9710cbb8bbd6574.png"></p>
+<p><img src="/2020/12/04/some_pit/fe245e67357ede3ce9710cbb8bbd6574.png" alt="fe245e67357ede3ce9710cbb8bbd6574.png"></p>
 <p>barriers在数据流源处被注入并行数据流中。快照n的barriers被插入的位置（我们称之为Sn）是快照所包含的数据在数据源中最大位置。</p>
 <p>例如，在Apache Kafka中，此位置将是分区中最后一条记录的偏移量。<br>将该位置Sn报告给checkpoint协调器（Flink的JobManager）。</p>
 <p>然后barriers向下游流动。当一个中间操作算子从其所有输入流中收到快照n的barriers时，它会为快照n发出barriers进入其所有输出流中。</p>
@@ -2311,8 +2311,8 @@
 <p>一个或多个由简单事件构成的事件流通过一定的规则匹配，然后输出用户想得到的数据 ——<br>满足规则的复杂事件</p>
 <h3 id="1-14-14-Flink-CEP-编程中当状态没有到达的时候会将数据保存在哪里？"><a href="#1-14-14-Flink-CEP-编程中当状态没有到达的时候会将数据保存在哪里？" class="headerlink" title="1.14.14 Flink CEP 编程中当状态没有到达的时候会将数据保存在哪里？"></a>1.14.14 Flink CEP 编程中当状态没有到达的时候会将数据保存在哪里？</h3><p>在流式处理中，CEP 当然是要支持 EventTime<br>的，那么相对应的也要支持数据的迟到现象，也就是watermark的处理逻辑。CEP对未匹配成功的事件序列的处理，和迟到数据是类似的。在<br>Flink<br>CEP的处理逻辑中，状态没有满足的和迟到的数据，都会存储在一个Map数据结构中，也就是说，如果我们限定判断事件序列的时长为5分钟，那么内存中就会存储5分钟的数据，这在我看来，也是对内存的极大损伤之一。</p>
 <h1 id="第2章-项目架构"><a href="#第2章-项目架构" class="headerlink" title="第2章 项目架构"></a>第2章 项目架构</h1><h2 id="2-1-提高自信"><a href="#2-1-提高自信" class="headerlink" title="2.1 提高自信"></a>2.1 提高自信</h2><p>云上数据仓库解决方案：<a href="https://www.aliyun.com/solution/datavexpo/datawarehouse">https://www.aliyun.com/solution/datavexpo/datawarehouse</a></p>
-<p><img src="/.com//0fb6dc419edbde5867e3171c4baa6c4e.png"></p>
-<p><img src="/.com//61dee637e5674e3b670909df7b51d907.png"></p>
+<p><img src="/2020/12/04/some_pit/0fb6dc419edbde5867e3171c4baa6c4e.png" alt="0fb6dc419edbde5867e3171c4baa6c4e.png"></p>
+<p><img src="/2020/12/04/some_pit/61dee637e5674e3b670909df7b51d907.png" alt="61dee637e5674e3b670909df7b51d907.png"></p>
 <h2 id="2-2-数仓概念"><a href="#2-2-数仓概念" class="headerlink" title="2.2 数仓概念"></a>2.2 数仓概念</h2><p><strong>数据仓库的输入数据源和输出系统分别是什么？</strong></p>
 <p>输入系统：埋点产生的用户行为数据、JavaEE后台产生的业务数据、个别公司有爬虫数据。</p>
 <p>输出系统：报表系统、用户画像系统、推荐系统</p>
@@ -2640,15 +2640,15 @@
 </tr>
 </tbody></table>
 <p>根据维度建模中的星型模型思想，将维度进行退化。例如下图所示：地区表和省份表退化为地区维度表，商品表、品类表、spu表、商品三级分类、商品二级分类、商品一级分类表退化为商品维度表，活动信息表和活动规则表退化为活动维度表。</p>
-<p><img src="/.com//8fe184a75c53c34a7930305d76d2bb27.png"></p>
+<p><img src="/2020/12/04/some_pit/8fe184a75c53c34a7930305d76d2bb27.png"></p>
 <p>至此，数仓的维度建模已经完毕，DWS、DWT和ADS和维度建模已经没有关系了。</p>
 <p>DWS和DWT都是建宽表，宽表都是按照主题去建。主题相当于观察问题的角度。对应着维度表。</p>
 <h3 id="3-1-4-DWS层"><a href="#3-1-4-DWS层" class="headerlink" title="3.1.4 DWS层"></a>3.1.4 DWS层</h3><p>DWS层统计各个主题对象的当天行为，服务于DWT层的主题宽表。如图所示，DWS层的宽表字段，是站在不同维度的视角去看事实表，重点关注事实表的度量值，通过与之关联的事实表，获得不同的事实表的度量值。</p>
-<p><img src="/.com//254f0eb40a8434abd9e2a7f1dd62e1f0.png"></p>
+<p><img src="/2020/12/04/some_pit/254f0eb40a8434abd9e2a7f1dd62e1f0.png"></p>
 <h3 id="3-1-5-DWT层"><a href="#3-1-5-DWT层" class="headerlink" title="3.1.5 DWT层"></a>3.1.5 DWT层</h3><p>以分析的<strong>主题对象</strong>为建模驱动，基于上层的应用和产品的指标需求，构建主题对象的全量宽表。</p>
 <p>DWT层主题宽表都记录什么字段？</p>
 <p>如图所示，每个维度关联的不同事实表度量值以及首次、末次时间、累积至今的度量值、累积某个时间段的度量值。</p>
-<p><img src="/.com//79b7ad6ae2caacb327e961afbfd86088.png"></p>
+<p><img src="/2020/12/04/some_pit/79b7ad6ae2caacb327e961afbfd86088.png"></p>
 <h3 id="3-1-6-ADS层"><a href="#3-1-6-ADS层" class="headerlink" title="3.1.6 ADS层"></a>3.1.6 ADS层</h3><p>分别对设备主题、会员主题、商品主题和营销主题进行指标分析，其中营销主题是用户主题和商品主题的跨主题分析案例</p>
 <h2 id="3-2-ODS层做了哪些事？"><a href="#3-2-ODS层做了哪些事？" class="headerlink" title="3.2 ODS层做了哪些事？"></a>3.2 ODS层做了哪些事？</h2><p>1）保持数据原貌，不做任何修改</p>
 <p>2）压缩采用LZO，压缩比是100g数据压缩完10g左右。</p>
@@ -2789,7 +2789,7 @@
 </blockquote>
 <h2 id="3-5-ADS层分析过哪些指标"><a href="#3-5-ADS层分析过哪些指标" class="headerlink" title="3.5 ADS层分析过哪些指标"></a>3.5 ADS层分析过哪些指标</h2><h3 id="3-5-1-分析过的指标（一分钟至少说出30个指标）"><a href="#3-5-1-分析过的指标（一分钟至少说出30个指标）" class="headerlink" title="3.5.1 分析过的指标（一分钟至少说出30个指标）"></a>3.5.1 分析过的指标（一分钟至少说出30个指标）</h3><p>日活、月活、周活、留存、留存率、新增（日、周、年）、转化率、流失、回流、七天内连续3天登录（点赞、收藏、评价、购买、加购、下单、活动）、连续3周（月）登录、GMV、复购率、复购率排行、点赞、评论、收藏、领优惠价人数、使用优惠价、沉默、值不值得买、退款人数、退款率<br>topn 热门商品</p>
 <p>产品经理最关心的：留转G复活</p>
-<p><img src="/.com//5679bb92e2b4f5ffac2449271c1ece9c.png"></p>
+<p><img src="/2020/12/04/some_pit/5679bb92e2b4f5ffac2449271c1ece9c.png"></p>
 <h3 id="3-5-2-留转G复活指标"><a href="#3-5-2-留转G复活指标" class="headerlink" title="3.5.2 留转G复活指标"></a>3.5.2 留转G复活指标</h3><p>（1）活跃</p>
 <blockquote>
 <p>  日活：100万 ；月活：是日活的2-3倍 300万</p>
@@ -2847,7 +2847,7 @@
 <p>订单详情表记录user_id，商品sku_id<br>,具体的商品信息（商品名称sku_name，价格order_price，数量sku_num）</p>
 <h2 id="4-2-埋点行为数据基本格式-基本字段"><a href="#4-2-埋点行为数据基本格式-基本字段" class="headerlink" title="4.2 埋点行为数据基本格式(基本字段)"></a>4.2 埋点行为数据基本格式(基本字段)</h2><p>我们要收集和分析的数据主要包括<strong>页面数据</strong>、<strong>事件数据、曝光数据、启动数据和错误数据</strong>。</p>
 <h3 id="4-2-1-页面"><a href="#4-2-1-页面" class="headerlink" title="4.2.1 页面"></a>4.2.1 页面</h3><p>页面数据主要记录一个页<br>面的用户访问情况，包括访问时间、停留时间、页面路径等信息。</p>
-<p><img src="/.com//9a01f1b363d979c772fe9d2ecb2d308f.png"></p>
+<p><img src="/2020/12/04/some_pit/9a01f1b363d979c772fe9d2ecb2d308f.png" alt="9a01f1b363d979c772fe9d2ecb2d308f.png"></p>
 <p>所有页面id如下</p>
 <blockquote>
 <p>  home(“首页”),</p>
@@ -2954,7 +2954,7 @@
 <p>  activity(“促销活动”);</p>
 </blockquote>
 <h3 id="4-2-2-事件"><a href="#4-2-2-事件" class="headerlink" title="4.2.2 事件"></a>4.2.2 事件</h3><p>事件数据主要记录应用内一个具体操作行为，包括操作类型、操作对象、操作对象描述等信息。</p>
-<p><img src="/.com//55e73089f1bd2706834d708e437e678c.png"></p>
+<p><img src="/2020/12/04/some_pit/55e73089f1bd2706834d708e437e678c.png" alt="55e73089f1bd2706834d708e437e678c.png"></p>
 <p>所有动作类型如下：</p>
 <blockquote>
 <p>  favor_add(“添加收藏”),</p>
@@ -2989,7 +2989,7 @@
 <p>  coupon_id(“购物券”);</p>
 </blockquote>
 <h3 id="4-2-3-曝光"><a href="#4-2-3-曝光" class="headerlink" title="4.2.3 曝光"></a>4.2.3 曝光</h3><p>曝光数据主要记录页面所曝光的内容，包括曝光对象，曝光类型等信息。</p>
-<p><img src="/.com//4944ba187f3057d5e683b97dc0046994.png"></p>
+<p><img src="/2020/12/04/some_pit/4944ba187f3057d5e683b97dc0046994.png" alt="4944ba187f3057d5e683b97dc0046994.png"></p>
 <p>所有曝光类型如下：</p>
 <blockquote>
 <p>  promotion(“商品推广”),<br>  recommend(“算法推荐商品”),<br>  query(“查询结果商品”),<br>  activity(“促销活动”);</p>
@@ -3002,7 +3002,7 @@
 <p>  activity_id(“活动id”);</p>
 </blockquote>
 <h3 id="4-2-4-启动"><a href="#4-2-4-启动" class="headerlink" title="4.2.4 启动"></a>4.2.4 启动</h3><p>启动数据记录应用的启动信息。</p>
-<p><img src="/.com//51d3aa64fce010a017ab56e48b05e0fc.png"></p>
+<p><img src="/2020/12/04/some_pit/51d3aa64fce010a017ab56e48b05e0fc.png" alt="51d3aa64fce010a017ab56e48b05e0fc.png"></p>
 <p>所有启动入口类型如下：</p>
 <blockquote>
 <p>  icon(“图标”),<br>  notification(“通知”),<br>  install(“安装后启动”);</p>
@@ -3280,7 +3280,7 @@
 </blockquote>
 <h2 id="4-3-电商业务流程"><a href="#4-3-电商业务流程" class="headerlink" title="4.3 电商业务流程"></a>4.3 电商业务流程</h2><p>1）记住表与表之间的关系</p>
 <p>2）每个表记住2-3个字段</p>
-<p><img src="/.com//25d5316135ceba9902305941ace34c7d.png"></p>
+<p><img src="/2020/12/04/some_pit/25d5316135ceba9902305941ace34c7d.png"></p>
 <h2 id="4-4-维度表和事实表（重点）"><a href="#4-4-维度表和事实表（重点）" class="headerlink" title="4.4 维度表和事实表（重点）"></a>4.4 维度表和事实表（重点）</h2><h3 id="4-4-1-维度表"><a href="#4-4-1-维度表" class="headerlink" title="4.4.1 维度表"></a>4.4.1 维度表</h3><p><strong>维度表</strong>：一般是对事实的<strong>描述信息</strong>。每一张维表对应现实世界中的一个对象或者概念。<br>例如：用户、商品、日期、地区等。</p>
 <h3 id="4-4-2-事实表"><a href="#4-4-2-事实表" class="headerlink" title="4.4.2 事实表"></a>4.4.2 事实表</h3><p><strong>事实表中的每行数据代表一个业务事件（下单、支付、退款、评价等）</strong>。“事实”这个术语表示的是业务事件的<strong>度量值（可统计次数、个数、件数、金额等）</strong>，例如，订单事件中的下单金额。</p>
 <p>每一个事实表的行包括：具有可加性的数值型的度量值、与维表相连接的外键、通常具有两个和两个以上的外键、外键之间表示维表之间多对多的关系。</p>
@@ -3312,7 +3312,7 @@
 <td></td>
 </tr>
 </tbody></table>
-<h2 id="4-5-同步策略（重点）"><a href="#4-5-同步策略（重点）" class="headerlink" title="4.5 同步策略（重点）"></a>4.5 同步策略（重点）</h2><p><img src="/.com//19bdf7c32c9bcd942848c2225c84b8d8.png"></p>
+<h2 id="4-5-同步策略（重点）"><a href="#4-5-同步策略（重点）" class="headerlink" title="4.5 同步策略（重点）"></a>4.5 同步策略（重点）</h2><p><img src="/2020/12/04/some_pit/19bdf7c32c9bcd942848c2225c84b8d8.png" alt="19bdf7c32c9bcd942848c2225c84b8d8.png"></p>
 <p>实体表，维度表统称维度表，每日全量或者每月（更长时间）全量</p>
 <p>事务型事实表：每日增量</p>
 <p>周期性事实表：拉链表</p>
@@ -3327,8 +3327,8 @@
 <p>（在维度建模的基础上又分为三种模型：星型模型、雪花模型、星座模型。）</p>
 <p>星型模型（一级维度表），雪花（多级维度），星座模型（星型模型+多个事实表）</p>
 <h2 id="4-8-拉链表（重点）"><a href="#4-8-拉链表（重点）" class="headerlink" title="4.8 拉链表（重点）"></a>4.8 拉链表（重点）</h2><p>拉链表处理的业务场景：主要处理缓慢变化维的业务场景。（用户表、订单表）</p>
-<p><img src="/.com//467bc157721839abb81f08a466bff208.png"></p>
-<h2 id="4-9-即席查询数据仓库"><a href="#4-9-即席查询数据仓库" class="headerlink" title="4.9 即席查询数据仓库"></a>4.9 即席查询数据仓库</h2><p><img src="/.com//39c606ab691accda9cc11fa629c33d86.png"></p>
+<p><img src="/2020/12/04/some_pit/467bc157721839abb81f08a466bff208.png" alt="467bc157721839abb81f08a466bff208.png"></p>
+<h2 id="4-9-即席查询数据仓库"><a href="#4-9-即席查询数据仓库" class="headerlink" title="4.9 即席查询数据仓库"></a>4.9 即席查询数据仓库</h2><p><img src="/2020/12/04/some_pit/39c606ab691accda9cc11fa629c33d86.png" alt="39c606ab691accda9cc11fa629c33d86.png"></p>
 <p>Kylin: T+1</p>
 <p>Impala: CDH</p>
 <p>Presto: Apache版本框架</p>
@@ -3364,7 +3364,7 @@
 <p>邮件/需求文档-》不要口头</p>
 <p><strong>第2步：需求评审</strong></p>
 <p>由产品经理主导设计原型，对于活跃主题，我们最终要展示的是<strong>最近n天的活跃用户数变化趋势</strong><br>，效果如下图所示。此处<strong>大数据开发工程师、后端开发工程师、前端开发工程师一同参与</strong>，一起说明整个功能的价值和详细的操作流程，确保大家理解的一致。</p>
-<p><img src="/.com//3db14f949fd4ccbd528263eff9df6e98.png"></p>
+<p><img src="/2020/12/04/some_pit/3db14f949fd4ccbd528263eff9df6e98.png"></p>
 <p><strong>第3步：大数据开发</strong></p>
 <p>大数据开发工程师，通过数据同步的工具如Flume、Sqoop等将数据同步到ODS层，然后就是一层一层的通过SQL计算到DWD、DWS层，最后形成可为应用直接服务的数据填充到ADS层。</p>
 <p><strong>第4步：后端开发</strong></p>
@@ -3429,7 +3429,7 @@
 <p>Spark数据倾斜</p>
 <p>Spark优化</p>
 <p>SparkStreaming精确一次性消费</p>
-<h2 id="6-4-Linux-Shell-Hadoop-ZK-Flume-kafka-Hive-Sqoop-Azkaban那些事"><a href="#6-4-Linux-Shell-Hadoop-ZK-Flume-kafka-Hive-Sqoop-Azkaban那些事" class="headerlink" title="6.4 Linux+Shell+Hadoop+ZK+Flume+kafka+Hive+Sqoop+Azkaban那些事"></a>6.4 Linux+Shell+Hadoop+ZK+Flume+kafka+Hive+Sqoop+Azkaban那些事</h2><p><img src="/.com//9deae070925650ce648410e6adb5115a.png"></p>
+<h2 id="6-4-Linux-Shell-Hadoop-ZK-Flume-kafka-Hive-Sqoop-Azkaban那些事"><a href="#6-4-Linux-Shell-Hadoop-ZK-Flume-kafka-Hive-Sqoop-Azkaban那些事" class="headerlink" title="6.4 Linux+Shell+Hadoop+ZK+Flume+kafka+Hive+Sqoop+Azkaban那些事"></a>6.4 Linux+Shell+Hadoop+ZK+Flume+kafka+Hive+Sqoop+Azkaban那些事</h2><p><img src="/2020/12/04/some_pit/9deae070925650ce648410e6adb5115a.png"></p>
 <h1 id="第7章-生产经验—热点问题"><a href="#第7章-生产经验—热点问题" class="headerlink" title="第7章 生产经验—热点问题"></a>第7章 生产经验—热点问题</h1><h2 id="7-1-元数据管理（Atlas血缘系统）"><a href="#7-1-元数据管理（Atlas血缘系统）" class="headerlink" title="7.1 元数据管理（Atlas血缘系统）"></a>7.1 元数据管理（Atlas血缘系统）</h2><p>依赖关系能够做到：表级别和字段级别</p>
 <p>用处：作业执行失败，评估他的影响范围。 主要用于表比较多的公司。</p>
 <p>版本问题：</p>
@@ -3511,30 +3511,30 @@
 <p>CDH cloudmanager-》sentry； HDP ambari=&gt;ranger</p>
 <p>数据治理是一个复杂的系统工程，涉及到企业和单位多个领域，既要做好顶层设计，又要解决好统一标准、统一流程、统一管理体系等问题，同时也要解决好数据采集、数据清洗、数据对接和应用集成等相关问题。</p>
 <p>数据治理实施要点主要包含<strong>数据规划、制定数据标准、整理数据、搭建数据管理工具、构建运维体系及推广贯标</strong>六大部分，其中数据规划是纲领、制定数据标准是基础、整理数据是过程、搭建数据管理工具是技术手段、构建运维体系是前提，推广贯标是持续保障。</p>
-<p><img src="/.com//ced4f62d11cd6fcbcf9d812f81517b54.jpeg"></p>
+<p><img src="/2020/12/04/some_pit/ced4f62d11cd6fcbcf9d812f81517b54.jpeg"></p>
 <h2 id="7-5-数据中台"><a href="#7-5-数据中台" class="headerlink" title="7.5 数据中台"></a>7.5 数据中台</h2><p><a href="https://mp.weixin.qq.com/s/nXI0nSSOneteIClA7dming">https://mp.weixin.qq.com/s/nXI0nSSOneteIClA7dming</a></p>
 <h3 id="7-5-1-什么是中台？"><a href="#7-5-1-什么是中台？" class="headerlink" title="7.5.1 什么是中台？"></a>7.5.1 什么是中台？</h3><p>在传统IT企业，项目的物理结构是什么样的呢？无论项目内部的如何复杂，都可分为“前台”和“后台”这两部分。</p>
 <p><strong>什么是前台？</strong></p>
 <p>首先，这里所说的“前台”和“前端”并不是一回事。所谓前台即包括各种和用户直接交互的界面，比如web页面，手机app；也包括服务端各种实时响应用户请求的业务逻辑，比如商品查询、订单系统等等。</p>
 <p><strong>什么是后台？</strong></p>
 <p>后台并不直接面向用户，而是面向运营人员的配置管理系统，比如商品管理、物流管理、结算管理。后台为前台提供了一些简单的配置。</p>
-<p><img src="/.com//784691687e2d74ee0dad27c0c5696df4.png"></p>
+<p><img src="/2020/12/04/some_pit/784691687e2d74ee0dad27c0c5696df4.png"></p>
 <h3 id="7-5-2-传统项目痛点"><a href="#7-5-2-传统项目痛点" class="headerlink" title="7.5.2 传统项目痛点"></a>7.5.2 传统项目痛点</h3><p>痛点：重复造轮子。</p>
-<p><img src="/.com//655cc407aa4000fb194f45dc4b947f79.png"></p>
+<p><img src="/2020/12/04/some_pit/655cc407aa4000fb194f45dc4b947f79.png"></p>
 <h3 id="7-5-3-各家中台"><a href="#7-5-3-各家中台" class="headerlink" title="7.5.3 各家中台"></a>7.5.3 各家中台</h3><p>1）SuperCell公司</p>
-<p><img src="/.com//ded9b7cd971e9cc7f9169cecf0e26226.png"></p>
+<p><img src="/2020/12/04/some_pit/ded9b7cd971e9cc7f9169cecf0e26226.png"></p>
 <p>2）阿里巴巴提出了“大中台，小前台”的战略</p>
-<p><img src="/.com//c4c1e1a9d6330c8a904378eb2c7afa14.png"></p>
+<p><img src="/2020/12/04/some_pit/c4c1e1a9d6330c8a904378eb2c7afa14.png"></p>
 <p>3）华为提出了“平台炮火支撑精兵作战”的战略</p>
-<p><img src="/.com//2abaacdcefbe29b2e3b3543189a2ffcb.png"></p>
+<p><img src="/2020/12/04/some_pit/2abaacdcefbe29b2e3b3543189a2ffcb.png"></p>
 <h3 id="7-5-4-中台具体划分"><a href="#7-5-4-中台具体划分" class="headerlink" title="7.5.4 中台具体划分"></a>7.5.4 中台具体划分</h3><p>1）业务中台</p>
-<p><img src="/.com//bdda2b87fe0a1a39aaf3c33c6d24d099.png"></p>
+<p><img src="/2020/12/04/some_pit/bdda2b87fe0a1a39aaf3c33c6d24d099.png"></p>
 <p>2）技术中台</p>
-<p><img src="/.com//248d0f1397e7638bd125d39e486bc28f.png"></p>
+<p><img src="/2020/12/04/some_pit/248d0f1397e7638bd125d39e486bc28f.png"></p>
 <p>3）数据中台</p>
-<p><img src="/.com//7f468e841d3969ba1fb236d8d8830e80.png"></p>
+<p><img src="/2020/12/04/some_pit/7f468e841d3969ba1fb236d8d8830e80.png"></p>
 <p>4）算法中台</p>
-<p><img src="/.com//fcceaa915ae10981ca8d9223eb156123.png"></p>
+<p><img src="/2020/12/04/some_pit/fcceaa915ae10981ca8d9223eb156123.png"></p>
 <h3 id="7-5-5-中台使用场景"><a href="#7-5-5-中台使用场景" class="headerlink" title="7.5.5 中台使用场景"></a>7.5.5 中台使用场景</h3><p><strong>1）从0到1的阶段，没有必要搭建中台。</strong></p>
 <p>从0到1的创业型公司，首要目的是生存下去，以最快的速度打造出产品，证明自身的市场价值。</p>
 <p>这个时候，让项目野蛮生长才是最好的选择。如果不慌不忙地先去搭建中台，恐怕中台还没搭建好，公司早就饿死了。</p>
@@ -3546,7 +3546,7 @@
 <p>但是长痛不如短痛，为了项目的长期发展，还是需要尽早调整架构，实现平台化，以免日后越来越难以维护。</p>
 <h2 id="7-6-数据湖"><a href="#7-6-数据湖" class="headerlink" title="7.6 数据湖"></a>7.6 数据湖</h2><p><strong>数据湖（</strong>Data<br>Lake）<strong>是一个存储企业的各种各样原始数据的大型仓库，其中的数据可供存取、处理、分析及传输。<br>hudi</strong></p>
 <p>目前，Hadoop是最常用的部署数据湖的技术，所以很多人会觉得数据湖就是Hadoop集群。数据湖是一个概念，而Hadoop是用于实现这个概念的技术。</p>
-<p><img src="/.com//d9b76a871960cce6b6302de4182cd91f.jpeg"></p>
+<p><img src="/2020/12/04/some_pit/d9b76a871960cce6b6302de4182cd91f.jpeg"></p>
 <table>
 <thead>
 <tr>
@@ -3569,21 +3569,21 @@
 <p><strong>代码埋点</strong>是通过调用埋点SDK函数，在需要埋点的业务逻辑功能位置调用接口，上报埋点数据。例如，我们对页面中的某个按钮埋点后，当这个按钮被点击时，可以在这个按钮对应的<br>OnClick 函数里面调用SDK提供的数据发送接口，来发送数据。</p>
 <p><strong>可视化埋点</strong>只需要研发人员集成采集<br>SDK，不需要写埋点代码，业务人员就可以通过访问分析平台的“圈选”功能，来“圈”出需要对用户行为进行捕捉的控件，并对该事件进行命名。圈选完毕后，这些配置会同步到各个用户的终端上，由采集<br>SDK 按照圈选的配置自动进行用户行为数据的采集和发送。</p>
 <p><strong>全埋点</strong>是通过在产品中嵌入SDK，前端自动采集页面上的全部用户行为事件，上报埋点数据，相当于做了一个统一的埋点。然后再通过界面配置哪些数据需要在系统里面进行分析。</p>
-<h2 id="7-8-电商运营经验"><a href="#7-8-电商运营经验" class="headerlink" title="7.8 电商运营经验"></a>7.8 电商运营经验</h2><h3 id="7-8-1-电商8类基本指标"><a href="#7-8-1-电商8类基本指标" class="headerlink" title="7.8.1 电商8类基本指标"></a>7.8.1 电商8类基本指标</h3><p><img src="/.com//42b1312d93c6309ab550a9f79f07240e.png"></p>
-<p><img src="/.com//520e108bedddac1b760f8618717eb6a9.png"></p>
-<p><img src="/.com//8c3adc4cdac454cfbbd62738e67ab45d.png"></p>
-<p><img src="/.com//1261826f5f9ea62f9819261ccd0b49b2.png"></p>
-<p><img src="/.com//7196080520cbdadd7d87328a67d47cef.png"></p>
-<p><img src="/.com//5e5e1d9030d44eddd3874a0d92ffef32.png"></p>
-<p><img src="/.com//68ca66d240479a15f179e1e85c731216.png"></p>
+<h2 id="7-8-电商运营经验"><a href="#7-8-电商运营经验" class="headerlink" title="7.8 电商运营经验"></a>7.8 电商运营经验</h2><h3 id="7-8-1-电商8类基本指标"><a href="#7-8-1-电商8类基本指标" class="headerlink" title="7.8.1 电商8类基本指标"></a>7.8.1 电商8类基本指标</h3><p><img src="/2020/12/04/some_pit/42b1312d93c6309ab550a9f79f07240e.png"></p>
+<p><img src="/2020/12/04/some_pit/520e108bedddac1b760f8618717eb6a9.png"></p>
+<p><img src="/2020/12/04/some_pit/8c3adc4cdac454cfbbd62738e67ab45d.png"></p>
+<p><img src="/2020/12/04/some_pit/1261826f5f9ea62f9819261ccd0b49b2.png"></p>
+<p><img src="/2020/12/04/some_pit/7196080520cbdadd7d87328a67d47cef.png"></p>
+<p><img src="/2020/12/04/some_pit/5e5e1d9030d44eddd3874a0d92ffef32.png"></p>
+<p><img src="/2020/12/04/some_pit/68ca66d240479a15f179e1e85c731216.png"></p>
 <p>8）市场竞争指标：主要分析市场份额以及网站排名，进一步进行调整</p>
-<p><img src="/.com//a658242b947afb60d89723ac6172af15.png"></p>
-<h3 id="7-8-2-直播指标"><a href="#7-8-2-直播指标" class="headerlink" title="7.8.2 直播指标"></a>7.8.2 直播指标</h3><p><img src="/.com//04e74364f9e77123d9ea22d7caf06c6f.png"></p>
-<p><img src="/.com//abb432a142d2dbac248e7e769416fc1b.png"></p>
-<p><img src="/.com//00f7f676de81cd24d847e2202516f9d9.png"></p>
-<p><img src="/.com//4083ce3cb57fd5a36622a083e63341f7.png"></p>
-<p><img src="/.com//7761a957da3a2eba722c1dc415b6e3ea.png"></p>
-<p><img src="/.com//16eb2d3b86f6f595cd5b54bed9eec2a3.png"></p>
+<p><img src="/2020/12/04/some_pit/a658242b947afb60d89723ac6172af15.png"></p>
+<h3 id="7-8-2-直播指标"><a href="#7-8-2-直播指标" class="headerlink" title="7.8.2 直播指标"></a>7.8.2 直播指标</h3><p><img src="/2020/12/04/some_pit/04e74364f9e77123d9ea22d7caf06c6f.png"></p>
+<p><img src="/2020/12/04/some_pit/abb432a142d2dbac248e7e769416fc1b.png"></p>
+<p><img src="/2020/12/04/some_pit/00f7f676de81cd24d847e2202516f9d9.png"></p>
+<p><img src="/2020/12/04/some_pit/4083ce3cb57fd5a36622a083e63341f7.png"></p>
+<p><img src="/2020/12/04/some_pit/7761a957da3a2eba722c1dc415b6e3ea.png"></p>
+<p><img src="/2020/12/04/some_pit/16eb2d3b86f6f595cd5b54bed9eec2a3.png"></p>
 <h1 id="第8章-手写代码"><a href="#第8章-手写代码" class="headerlink" title="第8章 手写代码"></a>第8章 手写代码</h1><h2 id="8-1-基本算法"><a href="#8-1-基本算法" class="headerlink" title="8.1 基本算法"></a>8.1 基本算法</h2><h3 id="8-1-1-冒泡排序"><a href="#8-1-1-冒泡排序" class="headerlink" title="8.1.1 冒泡排序"></a>8.1.1 冒泡排序</h3><p>/**</p>
 <p>* 冒泡排序 时间复杂度 O(n^2) 空间复杂度O(1)</p>
 <p>*/</p>
@@ -4814,12 +4814,12 @@
 <p>from</p>
 <p>t1</p>
 <h1 id="第9章-JavaSE"><a href="#第9章-JavaSE" class="headerlink" title="第9章 JavaSE"></a>第9章 JavaSE</h1><h2 id="9-1-HhashMap底层源码，数据结构"><a href="#9-1-HhashMap底层源码，数据结构" class="headerlink" title="9.1 HhashMap底层源码，数据结构"></a>9.1 HhashMap底层源码，数据结构</h2><p>hashMap的底层结构在jdk1.7中由数组+链表实现，在jdk1.8中由数组+链表+红黑树实现，以数组+链表的结构为例。</p>
-<p><img src="/.com//662ca9afacbd2ed50758a4bb1274454b.png"></p>
-<p><img src="/.com//ac1e22f8b8d429f6de9df7c580d0a517.png"></p>
+<p><img src="/2020/12/04/some_pit/662ca9afacbd2ed50758a4bb1274454b.png"></p>
+<p><img src="/2020/12/04/some_pit/ac1e22f8b8d429f6de9df7c580d0a517.png"></p>
 <p><strong>JDK1.8之前Put方法：</strong></p>
-<p><img src="/.com//47de90a2da0cf11857af0bcd485f1f6a.png"></p>
+<p><img src="/2020/12/04/some_pit/47de90a2da0cf11857af0bcd485f1f6a.png"></p>
 <p><strong>JDK1.8之后Put方法：</strong></p>
-<p><img src="/.com//bc7b047ab0fcf2c9878e99db9116518b.png"></p>
+<p><img src="/2020/12/04/some_pit/bc7b047ab0fcf2c9878e99db9116518b.png"></p>
 <h2 id="9-2-Java自带哪几种线程池？"><a href="#9-2-Java自带哪几种线程池？" class="headerlink" title="9.2 Java自带哪几种线程池？"></a>9.2 Java自带哪几种线程池？</h2><blockquote>
 <p>  <strong>1）newCachedThreadPool</strong></p>
 </blockquote>
@@ -4869,7 +4869,7 @@
 <p>equals:如果没重写equals方法比较的是两个对象的地址值。</p>
 <p>如果重写了equals方法后我们往往比较的是对象中的属性的内容</p>
 <p>equals方法是从Object类中继承的，默认的实现就是使用==</p>
-<p><img src="/.com//8be4ff45cc94624c97cbe549a91503ad.png"></p>
+<p><img src="/2020/12/04/some_pit/8be4ff45cc94624c97cbe549a91503ad.png"></p>
 <h1 id="第10章-Redis"><a href="#第10章-Redis" class="headerlink" title="第10章 Redis"></a>第10章 Redis</h1><h2 id="10-1-缓存穿透、缓存雪崩、缓存击穿"><a href="#10-1-缓存穿透、缓存雪崩、缓存击穿" class="headerlink" title="10.1 缓存穿透、缓存雪崩、缓存击穿"></a>10.1 缓存穿透、缓存雪崩、缓存击穿</h2><p>1）缓存穿透是指查询一个一定不存在的数据。由于缓存命不中时会去查询数据库，查不到数据则不写入缓存，这将导致这个不存在的数据每次请求都要到数据库去查询，造成缓存穿透。</p>
 <p>解决方案：</p>
 <ol>
@@ -4992,7 +4992,7 @@
 <p>不可重复读（read-committed） 否 是 是</p>
 <p>可重复读（repeatable-read） 否 否 是</p>
 <p>串行化（serializable） 否 否 否</p>
-<h1 id="第12章-JVM"><a href="#第12章-JVM" class="headerlink" title="第12章 JVM"></a>第12章 JVM</h1><h2 id="12-1-JVM内存分哪几个区，每个区的作用是什么"><a href="#12-1-JVM内存分哪几个区，每个区的作用是什么" class="headerlink" title="12.1 JVM内存分哪几个区，每个区的作用是什么?"></a>12.1 JVM内存分哪几个区，每个区的作用是什么?</h2><p><img src="/.com//289d3ec75a627586ff2ade85f08fe67e.png"></p>
+<h1 id="第12章-JVM"><a href="#第12章-JVM" class="headerlink" title="第12章 JVM"></a>第12章 JVM</h1><h2 id="12-1-JVM内存分哪几个区，每个区的作用是什么"><a href="#12-1-JVM内存分哪几个区，每个区的作用是什么" class="headerlink" title="12.1 JVM内存分哪几个区，每个区的作用是什么?"></a>12.1 JVM内存分哪几个区，每个区的作用是什么?</h2><p><img src="/2020/12/04/some_pit/289d3ec75a627586ff2ade85f08fe67e.png"></p>
 <p>java虚拟机主要分为以下几个区:</p>
 <ol>
 <li><p> <strong>方法区</strong>：</p>
