@@ -1,35 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>test11</title>
-    <url>/2020/11/24/t3/</url>
-    <content><![CDATA[<h3 id="cc"><a href="#cc" class="headerlink" title="cc"></a>cc</h3>]]></content>
-      <categories>
-        <category>xx</category>
-        <category>ww</category>
-      </categories>
-      <tags>
-        <tag>zk</tag>
-        <tag>kafka</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ttttt4</title>
-    <url>/2020/11/24/ttttt4/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>xx</category>
-        <category>yy</category>
-      </categories>
-      <tags>
-        <tag>lala</tag>
-        <tag>hadoop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>pit</title>
-    <url>/2020/12/03/dark/</url>
-    <content><![CDATA[<p>目录</p>
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>pit - Cheucen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Cheucen,"> 
+    <meta name="description" content="目录
+第1章    项目涉及技术    12
+
+  1.1 Linux&amp;amp;Shell    12
+
+
+  1.1.1 Linux常用高级命令    12
+
+
+  1.1.2 Shell常用工具,"> 
+    <meta name="author" content="Cheucen"> 
+    <link rel="alternative" href="atom.xml" title="Cheucen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Cheucen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">pit</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">pit</h1>
+        <div class="stuff">
+            <span>十二月 03, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/big-data/" rel="tag">big_data</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>目录</p>
 <p><a href="#_Toc42539336">第1章    项目涉及技术    12</a></p>
 <blockquote>
 <p>  <a href="#_Toc42539337">1.1 Linux&amp;Shell    12</a></p>
@@ -1446,7 +1488,7 @@
 </blockquote>
 <h3 id="1-2-11-集群资源分配参数（项目中遇到的问题）"><a href="#1-2-11-集群资源分配参数（项目中遇到的问题）" class="headerlink" title="1.2.11 集群资源分配参数（项目中遇到的问题）"></a>1.2.11 集群资源分配参数（项目中遇到的问题）</h3><p>集群有30台机器，跑MR任务的时候发现5个map任务全都分配到了同一台机器上，这个可能是由于什么原因导致的吗？</p>
 <p>解决方案：yarn.scheduler.fair.assignmultiple 这个参数，默认是关闭的。</p>
-<p><a href="https://blog.csdn.net/leone911/article/details/51605172">https://blog.csdn.net/leone911/article/details/51605172</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/leone911/article/details/51605172">https://blog.csdn.net/leone911/article/details/51605172</a></p>
 <h2 id="1-3-Zookeeper"><a href="#1-3-Zookeeper" class="headerlink" title="1.3 Zookeeper"></a>1.3 Zookeeper</h2><h3 id="1-3-1-选举机制"><a href="#1-3-1-选举机制" class="headerlink" title="1.3.1 选举机制"></a>1.3.1 选举机制</h3><p>半数机制：2n+1，安装奇数台</p>
 <blockquote>
 <p>  10台服务器：3台</p>
@@ -1565,7 +1607,7 @@
 <p>4）然后假设总的目标吞吐量是Tt，那么分区数=Tt / min（Tp，Tc）</p>
 <p>例如：producer吞吐量=20m/s；consumer吞吐量=50m/s，期望吞吐量100m/s；</p>
 <p>分区数=100 / 20 =5分区</p>
-<p><a href="https://blog.csdn.net/weixin_42641909/article/details/89294698">https://blog.csdn.net/weixin_42641909/article/details/89294698</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42641909/article/details/89294698">https://blog.csdn.net/weixin_42641909/article/details/89294698</a></p>
 <p>分区数一般设置为：3-10个</p>
 <h3 id="1-5-10-多少个Topic"><a href="#1-5-10-多少个Topic" class="headerlink" title="1.5.10 多少个Topic"></a>1.5.10 多少个Topic</h3><p>通常情况：多少个日志类型就多少个Topic。也有对日志类型进行合并的。</p>
 <h3 id="1-5-11-Kafka的ISR副本同步队列"><a href="#1-5-11-Kafka的ISR副本同步队列" class="headerlink" title="1.5.11 Kafka的ISR副本同步队列"></a>1.5.11 Kafka的ISR副本同步队列</h3><p>ISR（In-Sync<br>Replicas），副本同步队列。ISR中包括Leader和Follower。如果Leader进程挂掉，会在ISR队列中选择一个服务作为新的Leader。有replica.lag.max.messages（延迟条数）和replica.lag.time.max.ms（延迟时间）两个参数决定一台服务是否可以加入ISR副本队列，在0.10版本移除了replica.lag.max.messages参数，防止服务频繁的进去队列。</p>
@@ -1646,7 +1688,7 @@
 <p>日志清理保存的策略只有delete和compact两种</p>
 <p>log.cleanup.policy=delete启用删除策略</p>
 <p>log.cleanup.policy=compact启用压缩策略</p>
-<p><a href="https://www.jianshu.com/p/fa6adeae8eb5">https://www.jianshu.com/p/fa6adeae8eb5</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fa6adeae8eb5">https://www.jianshu.com/p/fa6adeae8eb5</a></p>
 <h3 id="1-5-21-Kafka可以按照时间消费数据"><a href="#1-5-21-Kafka可以按照时间消费数据" class="headerlink" title="1.5.21 Kafka可以按照时间消费数据"></a>1.5.21 Kafka可以按照时间消费数据</h3><p>Map&lt;TopicPartition, OffsetAndTimestamp&gt; startOffsetMap =<br>KafkaUtil.fetchOffsetsWithTimestamp(topic, sTime, kafkaProp);</p>
 <h3 id="1-5-22-Kafka消费者角度考虑是拉取数据还是推送数据"><a href="#1-5-22-Kafka消费者角度考虑是拉取数据还是推送数据" class="headerlink" title="1.5.22 Kafka消费者角度考虑是拉取数据还是推送数据"></a>1.5.22 Kafka消费者角度考虑是拉取数据还是推送数据</h3><p>拉取数据</p>
 <h3 id="1-5-23-Kafka中的数据是有序的吗"><a href="#1-5-23-Kafka中的数据是有序的吗" class="headerlink" title="1.5.23 Kafka中的数据是有序的吗"></a>1.5.23 Kafka中的数据是有序的吗</h3><p>单分区内有序；多分区，分区与分区间无序；</p>
@@ -1721,7 +1763,7 @@
 <p>mapred.max.split.size: 指的是数据的最大分割单元大小；max的默认值是256MB</p>
 <p>通过调整max可以起到调整map数的作用，减小max可以增加map数，增大max可以减少map数。</p>
 <p>需要提醒的是，直接调整mapred.map.tasks这个参数是没有效果的。</p>
-<p><a href="https://www.cnblogs.com/swordfall/p/11037539.html">https://www.cnblogs.com/swordfall/p/11037539.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/swordfall/p/11037539.html">https://www.cnblogs.com/swordfall/p/11037539.html</a></p>
 <p><strong>6）合理设置Reduce数</strong></p>
 <p>Reduce个数并不是越多越好</p>
 <p>（1）过多的启动和初始化Reduce也会消耗时间和资源；</p>
@@ -1765,7 +1807,7 @@
 <p>select * from users a</p>
 <p>left outer join logs b</p>
 <p>on a.usr_id = cast(b.user_id as string)</p>
-<p>bug记录：<a href="https://www.jianshu.com/p/2181e00d74dc">https://www.jianshu.com/p/2181e00d74dc</a></p>
+<p>bug记录：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2181e00d74dc">https://www.jianshu.com/p/2181e00d74dc</a></p>
 <p><strong>（2）控制空值分布</strong></p>
 <p>在生产环境经常会用大量空值数据进入到一个reduce中去，导致数据倾斜。</p>
 <p>解决办法：</p>
@@ -1818,7 +1860,7 @@
 <p>--query “$2” ‘ and $CONDITIONS;’</p>
 <h3 id="1-7-2-Sqoop导入导出Null存储一致性问题"><a href="#1-7-2-Sqoop导入导出Null存储一致性问题" class="headerlink" title="1.7.2 Sqoop导入导出Null存储一致性问题"></a>1.7.2 Sqoop导入导出Null存储一致性问题</h3><p>Hive中的Null在底层是以“\N”来存储，而MySQL中的Null在底层就是Null，为了保证数据两端的一致性。在导出数据时采用–input-null-string和–input-null-non-string两个参数。导入数据时采用–null-string和–null-non-string。</p>
 <h3 id="1-7-3-Sqoop数据导出一致性问题"><a href="#1-7-3-Sqoop数据导出一致性问题" class="headerlink" title="1.7.3 Sqoop数据导出一致性问题"></a>1.7.3 Sqoop数据导出一致性问题</h3><p>场景1：如Sqoop在导出到Mysql时，使用4个Map任务，过程中有2个任务失败，那此时MySQL中存储了另外两个Map任务导入的数据，此时老板正好看到了这个报表数据。而开发工程师发现任务失败后，会调试问题并最终将全部数据正确的导入MySQL，那后面老板再次看报表数据，发现本次看到的数据与之前的不一致，这在生产环境是不允许的。</p>
-<p>官网：<a href="http://sqoop.apache.org/docs/1.4.6/SqoopUserGuide.html">http://sqoop.apache.org/docs/1.4.6/SqoopUserGuide.html</a></p>
+<p>官网：<a target="_blank" rel="noopener" href="http://sqoop.apache.org/docs/1.4.6/SqoopUserGuide.html">http://sqoop.apache.org/docs/1.4.6/SqoopUserGuide.html</a></p>
 <p>Since Sqoop breaks down export process into multiple transactions, it is<br>possible that a failed export job may result in partial data being committed to<br>the database. This can further lead to subsequent jobs failing due to insert<br>collisions in some cases, or lead to duplicated data in others. You can overcome<br>this problem by specifying a staging table via the –staging-table option which<br>acts as an auxiliary table that is used to stage exported data. The staged data<br>is finally moved to the destination table in a single transaction.</p>
 <p>–staging-table方式</p>
 <p>sqoop export –connect jdbc:mysql://192.168.137.10:3306/user_behavior –username<br>root –password 123456 –table app_cource_study_report –columns<br>watch_video_cnt,complete_video_cnt,dt –fields-terminated-by “\t” –export-dir<br>“/user/hive/warehouse/tmp.db/app_cource_study_analysis_${day}” –staging-table<br>app_cource_study_report_tmp –clear-staging-table –input-null-string ‘\N’</p>
@@ -1826,7 +1868,7 @@
 <h3 id="1-7-5-Sqoop一天导入多少数据"><a href="#1-7-5-Sqoop一天导入多少数据" class="headerlink" title="1.7.5 Sqoop一天导入多少数据"></a>1.7.5 Sqoop一天导入多少数据</h3><p>100万日活=》10万订单，1人10条，每天1g左右业务数据</p>
 <p>Sqoop每天将1G的数据量导入到数仓。</p>
 <h3 id="1-7-6-Sqoop数据导出的时候一次执行多长时间"><a href="#1-7-6-Sqoop数据导出的时候一次执行多长时间" class="headerlink" title="1.7.6 Sqoop数据导出的时候一次执行多长时间"></a>1.7.6 Sqoop数据导出的时候一次执行多长时间</h3><p>每天晚上00:30开始执行，Sqoop任务一般情况40<br>-50分钟的都有。取决于数据量（11:11，6:18等活动在1个小时左右）。</p>
-<h3 id="1-7-7-Sqoop在导入数据的时候数据倾斜"><a href="#1-7-7-Sqoop在导入数据的时候数据倾斜" class="headerlink" title="1.7.7 Sqoop在导入数据的时候数据倾斜"></a>1.7.7 Sqoop在导入数据的时候数据倾斜</h3><p><a href="https://blog.csdn.net/lizhiguo18/article/details/103969906">https://blog.csdn.net/lizhiguo18/article/details/103969906</a></p>
+<h3 id="1-7-7-Sqoop在导入数据的时候数据倾斜"><a href="#1-7-7-Sqoop在导入数据的时候数据倾斜" class="headerlink" title="1.7.7 Sqoop在导入数据的时候数据倾斜"></a>1.7.7 Sqoop在导入数据的时候数据倾斜</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lizhiguo18/article/details/103969906">https://blog.csdn.net/lizhiguo18/article/details/103969906</a></p>
 <p>Sqoop 抽数的并行化主要涉及到两个参数：通过ROWNUM()<br>生成一个严格均匀分布的字段，然后指定为分割字段;<br>split-by：按照某一列来切分表的工作单元。</p>
 <p>num-mappers：启动N个map来并行导入数据，默认4个；</p>
 <h3 id="1-7-8-Sqoop数据导出Parquet（项目中遇到的问题）"><a href="#1-7-8-Sqoop数据导出Parquet（项目中遇到的问题）" class="headerlink" title="1.7.8 Sqoop数据导出Parquet（项目中遇到的问题）"></a>1.7.8 Sqoop数据导出Parquet（项目中遇到的问题）</h3><p>Ads层数据用Sqoop往MySql中导入数据的时候，如果用了orc（Parquet）不能导入，需转化成text格式</p>
@@ -1840,7 +1882,7 @@
 <p>  2）最主要的解决方案就是重新跑。</p>
 </blockquote>
 <blockquote>
-<p>  3）报警网站<a href="http://www.onealert.com/">http://www.onealert.com/</a></p>
+<p>  3）报警网站<a target="_blank" rel="noopener" href="http://www.onealert.com/">http://www.onealert.com/</a></p>
 </blockquote>
 <h2 id="1-9-HBase"><a href="#1-9-HBase" class="headerlink" title="1.9 HBase"></a>1.9 HBase</h2><h3 id="1-9-1-HBase存储结构"><a href="#1-9-1-HBase存储结构" class="headerlink" title="1.9.1 HBase存储结构"></a>1.9.1 HBase存储结构</h3><h3 id="1-9-2-RowKey设计原则"><a href="#1-9-2-RowKey设计原则" class="headerlink" title="1.9.2 RowKey设计原则"></a>1.9.2 RowKey设计原则</h3><p>1）rowkey长度原则</p>
 <p>2）rowkey散列原则</p>
@@ -1868,7 +1910,7 @@
 <p>4）Mesos：国内大环境比较少用。</p>
 <h3 id="1-11-2-Spark任务使用什么进行提交，JavaEE界面还是脚本"><a href="#1-11-2-Spark任务使用什么进行提交，JavaEE界面还是脚本" class="headerlink" title="1.11.2 Spark任务使用什么进行提交，JavaEE界面还是脚本"></a>1.11.2 Spark任务使用什么进行提交，JavaEE界面还是脚本</h3><p>Shell 脚本。</p>
 <h3 id="1-11-3-Spark提交作业参数（重点）"><a href="#1-11-3-Spark提交作业参数（重点）" class="headerlink" title="1.11.3 Spark提交作业参数（重点）"></a>1.11.3 Spark提交作业参数（重点）</h3><p>参考答案：</p>
-<p><a href="https://blog.csdn.net/gamer_gyt/article/details/79135118">https://blog.csdn.net/gamer_gyt/article/details/79135118</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gamer_gyt/article/details/79135118">https://blog.csdn.net/gamer_gyt/article/details/79135118</a></p>
 <p>1）在提交任务时的几个重要参数</p>
 <blockquote>
 <p>  executor-cores ——<br>  每个executor使用的内核数，默认为1，官方建议2-5个，我们企业是4个</p>
@@ -2310,7 +2352,7 @@
 <p>CEP 允许在无休止的事件流中检测事件模式，让我们有机会掌握数据中重要的部分</p>
 <p>一个或多个由简单事件构成的事件流通过一定的规则匹配，然后输出用户想得到的数据 ——<br>满足规则的复杂事件</p>
 <h3 id="1-14-14-Flink-CEP-编程中当状态没有到达的时候会将数据保存在哪里？"><a href="#1-14-14-Flink-CEP-编程中当状态没有到达的时候会将数据保存在哪里？" class="headerlink" title="1.14.14 Flink CEP 编程中当状态没有到达的时候会将数据保存在哪里？"></a>1.14.14 Flink CEP 编程中当状态没有到达的时候会将数据保存在哪里？</h3><p>在流式处理中，CEP 当然是要支持 EventTime<br>的，那么相对应的也要支持数据的迟到现象，也就是watermark的处理逻辑。CEP对未匹配成功的事件序列的处理，和迟到数据是类似的。在<br>Flink<br>CEP的处理逻辑中，状态没有满足的和迟到的数据，都会存储在一个Map数据结构中，也就是说，如果我们限定判断事件序列的时长为5分钟，那么内存中就会存储5分钟的数据，这在我看来，也是对内存的极大损伤之一。</p>
-<h1 id="第2章-项目架构"><a href="#第2章-项目架构" class="headerlink" title="第2章 项目架构"></a>第2章 项目架构</h1><h2 id="2-1-提高自信"><a href="#2-1-提高自信" class="headerlink" title="2.1 提高自信"></a>2.1 提高自信</h2><p>云上数据仓库解决方案：<a href="https://www.aliyun.com/solution/datavexpo/datawarehouse">https://www.aliyun.com/solution/datavexpo/datawarehouse</a></p>
+<h1 id="第2章-项目架构"><a href="#第2章-项目架构" class="headerlink" title="第2章 项目架构"></a>第2章 项目架构</h1><h2 id="2-1-提高自信"><a href="#2-1-提高自信" class="headerlink" title="2.1 提高自信"></a>2.1 提高自信</h2><p>云上数据仓库解决方案：<a target="_blank" rel="noopener" href="https://www.aliyun.com/solution/datavexpo/datawarehouse">https://www.aliyun.com/solution/datavexpo/datawarehouse</a></p>
 <p><img src="media/0fb6dc419edbde5867e3171c4baa6c4e.png"></p>
 <p><img src="media/61dee637e5674e3b670909df7b51d907.png"></p>
 <h2 id="2-2-数仓概念"><a href="#2-2-数仓概念" class="headerlink" title="2.2 数仓概念"></a>2.2 数仓概念</h2><p><strong>数据仓库的输入数据源和输出系统分别是什么？</strong></p>
@@ -3512,7 +3554,7 @@
 <p>数据治理是一个复杂的系统工程，涉及到企业和单位多个领域，既要做好顶层设计，又要解决好统一标准、统一流程、统一管理体系等问题，同时也要解决好数据采集、数据清洗、数据对接和应用集成等相关问题。</p>
 <p>数据治理实施要点主要包含<strong>数据规划、制定数据标准、整理数据、搭建数据管理工具、构建运维体系及推广贯标</strong>六大部分，其中数据规划是纲领、制定数据标准是基础、整理数据是过程、搭建数据管理工具是技术手段、构建运维体系是前提，推广贯标是持续保障。</p>
 <p><img src="media/ced4f62d11cd6fcbcf9d812f81517b54.jpeg"></p>
-<h2 id="7-5-数据中台"><a href="#7-5-数据中台" class="headerlink" title="7.5 数据中台"></a>7.5 数据中台</h2><p><a href="https://mp.weixin.qq.com/s/nXI0nSSOneteIClA7dming">https://mp.weixin.qq.com/s/nXI0nSSOneteIClA7dming</a></p>
+<h2 id="7-5-数据中台"><a href="#7-5-数据中台" class="headerlink" title="7.5 数据中台"></a>7.5 数据中台</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/nXI0nSSOneteIClA7dming">https://mp.weixin.qq.com/s/nXI0nSSOneteIClA7dming</a></p>
 <h3 id="7-5-1-什么是中台？"><a href="#7-5-1-什么是中台？" class="headerlink" title="7.5.1 什么是中台？"></a>7.5.1 什么是中台？</h3><p>在传统IT企业，项目的物理结构是什么样的呢？无论项目内部的如何复杂，都可分为“前台”和“后台”这两部分。</p>
 <p><strong>什么是前台？</strong></p>
 <p>首先，这里所说的“前台”和“前端”并不是一回事。所谓前台即包括各种和用户直接交互的界面，比如web页面，手机app；也包括服务端各种实时响应用户请求的业务逻辑，比如商品查询、订单系统等等。</p>
@@ -3564,7 +3606,7 @@
 </tr>
 </tbody></table>
 <h2 id="7-7-埋点"><a href="#7-7-埋点" class="headerlink" title="7.7 埋点"></a>7.7 埋点</h2><p>免费的埋点：上课演示。</p>
-<p>收费的埋点：神策 <a href="https://mp.weixin.qq.com/s/Xp3-alWF4XHvKDP9rNWCoQ">https://mp.weixin.qq.com/s/Xp3-alWF4XHvKDP9rNWCoQ</a></p>
+<p>收费的埋点：神策 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Xp3-alWF4XHvKDP9rNWCoQ">https://mp.weixin.qq.com/s/Xp3-alWF4XHvKDP9rNWCoQ</a></p>
 <p>目前主流的埋点方式，有代码埋点（前端/后端）、可视化埋点、全埋点三种。</p>
 <p><strong>代码埋点</strong>是通过调用埋点SDK函数，在需要埋点的业务逻辑功能位置调用接口，上报埋点数据。例如，我们对页面中的某个按钮埋点后，当这个按钮被点击时，可以在这个按钮对应的<br>OnClick 函数里面调用SDK提供的数据发送接口，来发送数据。</p>
 <p><strong>可视化埋点</strong>只需要研发人员集成采集<br>SDK，不需要写埋点代码，业务人员就可以通过访问分析平台的“圈选”功能，来“圈”出需要对用户行为进行捕捉的控件，并对该事件进行命名。圈选完毕后，这些配置会同步到各个用户的终端上，由采集<br>SDK 按照圈选的配置自动进行用户行为数据的采集和发送。</p>
@@ -5187,8 +5229,8 @@
 <p>3）深度沟通（也叫压力面试）</p>
 <p>刨根问底下沉式追问（注意是下沉式，而不是发散式的）</p>
 <p>基本技巧：往自己熟悉的方向说</p>
-<h1 id="第15章-LeetCode题目精选"><a href="#第15章-LeetCode题目精选" class="headerlink" title="第15章 LeetCode题目精选"></a>第15章 LeetCode题目精选</h1><p><a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/xue-xi-shu-ju-jie-gou-he-suan-fa-de-gao-xiao-fang-fa">https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/xue-xi-shu-ju-jie-gou-he-suan-fa-de-gao-xiao-fang-fa</a></p>
-<h2 id="15-1-两数之和"><a href="#15-1-两数之和" class="headerlink" title="15.1 两数之和"></a>15.1 两数之和</h2><p>问题链接：<a href="https://leetcode-cn.com/problems/two-sum/">https://leetcode-cn.com/problems/two-sum/</a></p>
+<h1 id="第15章-LeetCode题目精选"><a href="#第15章-LeetCode题目精选" class="headerlink" title="第15章 LeetCode题目精选"></a>第15章 LeetCode题目精选</h1><p><a target="_blank" rel="noopener" href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/xue-xi-shu-ju-jie-gou-he-suan-fa-de-gao-xiao-fang-fa">https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/xue-xi-shu-ju-jie-gou-he-suan-fa-de-gao-xiao-fang-fa</a></p>
+<h2 id="15-1-两数之和"><a href="#15-1-两数之和" class="headerlink" title="15.1 两数之和"></a>15.1 两数之和</h2><p>问题链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum/">https://leetcode-cn.com/problems/two-sum/</a></p>
 <h3 id="15-1-1-问题描述"><a href="#15-1-1-问题描述" class="headerlink" title="15.1.1 问题描述"></a>15.1.1 问题描述</h3><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个<br>整数，并返回他们的数组下标。</p>
 <p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
 <blockquote>
@@ -5251,7 +5293,7 @@
 <blockquote>
 <p>  ```</p>
 </blockquote>
-<h2 id="15-2-爬楼梯"><a href="#15-2-爬楼梯" class="headerlink" title="15.2 爬楼梯"></a>15.2 爬楼梯</h2><p>问题链接：<a href="https://leetcode-cn.com/problems/climbing-stairs/">https://leetcode-cn.com/problems/climbing-stairs/</a></p>
+<h2 id="15-2-爬楼梯"><a href="#15-2-爬楼梯" class="headerlink" title="15.2 爬楼梯"></a>15.2 爬楼梯</h2><p>问题链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/">https://leetcode-cn.com/problems/climbing-stairs/</a></p>
 <h3 id="15-2-1-问题描述"><a href="#15-2-1-问题描述" class="headerlink" title="15.2.1 问题描述"></a>15.2.1 问题描述</h3><p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。</p>
 <p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
 <p>注意：给定 n 是一个正整数。</p>
@@ -5297,7 +5339,7 @@
 <p>}</p>
 <p>}</p>
 <p>```</p>
-<h2 id="15-3-翻转二叉树"><a href="#15-3-翻转二叉树" class="headerlink" title="15.3 翻转二叉树"></a>15.3 翻转二叉树</h2><p>链接：<a href="https://leetcode-cn.com/problems/invert-binary-tree/">https://leetcode-cn.com/problems/invert-binary-tree/</a></p>
+<h2 id="15-3-翻转二叉树"><a href="#15-3-翻转二叉树" class="headerlink" title="15.3 翻转二叉树"></a>15.3 翻转二叉树</h2><p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree/">https://leetcode-cn.com/problems/invert-binary-tree/</a></p>
 <h3 id="15-3-1-问题描述"><a href="#15-3-1-问题描述" class="headerlink" title="15.3.1 问题描述"></a>15.3.1 问题描述</h3><p>翻转一棵二叉树。</p>
 <p>示例：</p>
 <p>输入：</p>
@@ -5328,7 +5370,7 @@
 <p>return root;</p>
 <p>}</p>
 <p>```</p>
-<h2 id="15-4-反转链表"><a href="#15-4-反转链表" class="headerlink" title="15.4 反转链表"></a>15.4 反转链表</h2><p>链接：<a href="https://leetcode-cn.com/problems/reverse-linked-list/">https://leetcode-cn.com/problems/reverse-linked-list/</a></p>
+<h2 id="15-4-反转链表"><a href="#15-4-反转链表" class="headerlink" title="15.4 反转链表"></a>15.4 反转链表</h2><p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list/">https://leetcode-cn.com/problems/reverse-linked-list/</a></p>
 <h3 id="15-4-1-问题描述"><a href="#15-4-1-问题描述" class="headerlink" title="15.4.1 问题描述"></a>15.4.1 问题描述</h3><p>反转一个单链表。</p>
 <p>示例:</p>
 <p>```</p>
@@ -5348,7 +5390,7 @@
 <p>return prev;</p>
 <p>}</p>
 <p>```</p>
-<h2 id="15-5-LRU缓存机制"><a href="#15-5-LRU缓存机制" class="headerlink" title="15.5 LRU缓存机制"></a>15.5 LRU缓存机制</h2><p>链接：<a href="https://leetcode-cn.com/problems/lru-cache/">https://leetcode-cn.com/problems/lru-cache/</a></p>
+<h2 id="15-5-LRU缓存机制"><a href="#15-5-LRU缓存机制" class="headerlink" title="15.5 LRU缓存机制"></a>15.5 LRU缓存机制</h2><p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lru-cache/">https://leetcode-cn.com/problems/lru-cache/</a></p>
 <h3 id="15-5-1-问题描述"><a href="#15-5-1-问题描述" class="headerlink" title="15.5.1 问题描述"></a>15.5.1 问题描述</h3><p>运用你所掌握的数据结构，设计和实现一个 LRU (最近最少使用)<br>缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。</p>
 <p>获取数据 get(key) - 如果密钥 (key)<br>存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。</p>
 <p>写入数据 put(key, value) -<br>如果密钥不存在，则写入其数据值。当缓存容量达到上限时，它应该在写入新数据之前删除最近最少使用的数据值，从而为新的数据值留出空间。</p>
@@ -5392,7 +5434,7 @@
 <p>* obj.put(key,value);</p>
 <p>*/</p>
 <p>```</p>
-<h2 id="15-6-最长回文子串"><a href="#15-6-最长回文子串" class="headerlink" title="15.6 最长回文子串"></a>15.6 最长回文子串</h2><p>链接：<a href="https://leetcode-cn.com/problems/longest-palindromic-substring/">https://leetcode-cn.com/problems/longest-palindromic-substring/</a></p>
+<h2 id="15-6-最长回文子串"><a href="#15-6-最长回文子串" class="headerlink" title="15.6 最长回文子串"></a>15.6 最长回文子串</h2><p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-palindromic-substring/">https://leetcode-cn.com/problems/longest-palindromic-substring/</a></p>
 <h3 id="15-6-1-问题描述"><a href="#15-6-1-问题描述" class="headerlink" title="15.6.1 问题描述"></a>15.6.1 问题描述</h3><p>给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。</p>
 <p>示例 1：</p>
 <p>```</p>
@@ -5429,7 +5471,7 @@
 <p>return R - L - 1;</p>
 <p>}</p>
 <p>```</p>
-<h2 id="15-7-有效的括号"><a href="#15-7-有效的括号" class="headerlink" title="15.7 有效的括号"></a>15.7 有效的括号</h2><p>链接：<a href="https://leetcode-cn.com/problems/valid-parentheses/">https://leetcode-cn.com/problems/valid-parentheses/</a></p>
+<h2 id="15-7-有效的括号"><a href="#15-7-有效的括号" class="headerlink" title="15.7 有效的括号"></a>15.7 有效的括号</h2><p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses/">https://leetcode-cn.com/problems/valid-parentheses/</a></p>
 <h3 id="15-7-1-问题描述"><a href="#15-7-1-问题描述" class="headerlink" title="15.7.1 问题描述"></a>15.7.1 问题描述</h3><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。</p>
 <p>有效字符串需满足：</p>
 <ol>
@@ -5498,7 +5540,7 @@
 <p>}</p>
 <p>}</p>
 <p>```</p>
-<h2 id="15-8-数组中的第K个最大元素"><a href="#15-8-数组中的第K个最大元素" class="headerlink" title="15.8 数组中的第K个最大元素"></a>15.8 数组中的第K个最大元素</h2><p>链接：<a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">https://leetcode-cn.com/problems/kth-largest-element-in-an-array/</a></p>
+<h2 id="15-8-数组中的第K个最大元素"><a href="#15-8-数组中的第K个最大元素" class="headerlink" title="15.8 数组中的第K个最大元素"></a>15.8 数组中的第K个最大元素</h2><p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">https://leetcode-cn.com/problems/kth-largest-element-in-an-array/</a></p>
 <h3 id="15-8-1-问题描述"><a href="#15-8-1-问题描述" class="headerlink" title="15.8.1 问题描述"></a>15.8.1 问题描述</h3><p>在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k<br>个最大的元素，而不是第 k 个不同的元素。</p>
 <p>示例 1:</p>
 <p>```</p>
@@ -5617,7 +5659,7 @@
 <p>}</p>
 <p>}</p>
 <p>```</p>
-<h2 id="15-10-编辑距离"><a href="#15-10-编辑距离" class="headerlink" title="15.10 编辑距离"></a>15.10 编辑距离</h2><p>链接：<a href="https://leetcode-cn.com/problems/edit-distance/">https://leetcode-cn.com/problems/edit-distance/</a></p>
+<h2 id="15-10-编辑距离"><a href="#15-10-编辑距离" class="headerlink" title="15.10 编辑距离"></a>15.10 编辑距离</h2><p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/edit-distance/">https://leetcode-cn.com/problems/edit-distance/</a></p>
 <h3 id="15-10-1-问题描述"><a href="#15-10-1-问题描述" class="headerlink" title="15.10.1 问题描述"></a>15.10.1 问题描述</h3><p>给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数 。</p>
 <p>你可以对一个单词进行如下三种操作：</p>
 <ol>
@@ -5680,9 +5722,109 @@
 <p>}</p>
 <p>}</p>
 <p>```</p>
-]]></content>
-      <tags>
-        <tag>big_data</tag>
-      </tags>
-  </entry>
-</search>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/407002113.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
