@@ -1991,7 +1991,7 @@
 <p>普通的SortShuffle：</p>
 <p>当 shuffle read task 的 数 量 小 于 等 于 spark.shuffle.sort。</p>
 <p>bypassMergeThreshold 参数的值时（默认为 200），就会启用 bypass 机制。</p>
-<p><img src="/2020/12/04/some_pit/c6bf5aab850855e1110b69a39e3914ca.png" alt="图片"></p>
+<p><img src="/2020/12/04/some_pit/c6bf5aab850855e1110b69a39e3914ca.png" alt="c6bf5aab850855e1110b69a39e3914ca.png"></p>
 <h3 id="1-11-11-Spark常用算子reduceByKey与groupByKey的区别，哪一种更具优势？（重点）"><a href="#1-11-11-Spark常用算子reduceByKey与groupByKey的区别，哪一种更具优势？（重点）" class="headerlink" title="1.11.11 Spark常用算子reduceByKey与groupByKey的区别，哪一种更具优势？（重点）"></a>1.11.11 Spark常用算子reduceByKey与groupByKey的区别，哪一种更具优势？（重点）</h3><p>reduceByKey：按照key进行聚合，在shuffle之前有combine（预聚合）操作，返回结果是RDD[k,v]。</p>
 <p>groupByKey：按照key进行分组，直接进行shuffle。</p>
 <p>开发指导：reduceByKey比groupByKey，建议使用。但是需要注意是否会影响业务逻辑。</p>
