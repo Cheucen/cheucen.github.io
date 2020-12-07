@@ -1650,7 +1650,7 @@
 <h3 id="1-5-21-Kafka可以按照时间消费数据"><a href="#1-5-21-Kafka可以按照时间消费数据" class="headerlink" title="1.5.21 Kafka可以按照时间消费数据"></a>1.5.21 Kafka可以按照时间消费数据</h3><p>Map&lt;TopicPartition, OffsetAndTimestamp&gt; startOffsetMap =<br>KafkaUtil.fetchOffsetsWithTimestamp(topic, sTime, kafkaProp);</p>
 <h3 id="1-5-22-Kafka消费者角度考虑是拉取数据还是推送数据"><a href="#1-5-22-Kafka消费者角度考虑是拉取数据还是推送数据" class="headerlink" title="1.5.22 Kafka消费者角度考虑是拉取数据还是推送数据"></a>1.5.22 Kafka消费者角度考虑是拉取数据还是推送数据</h3><p>拉取数据</p>
 <h3 id="1-5-23-Kafka中的数据是有序的吗"><a href="#1-5-23-Kafka中的数据是有序的吗" class="headerlink" title="1.5.23 Kafka中的数据是有序的吗"></a>1.5.23 Kafka中的数据是有序的吗</h3><p>单分区内有序；多分区，分区与分区间无序；</p>
-<h2 id="1-6-Hive"><a href="#1-6-Hive" class="headerlink" title="1.6 Hive"></a>1.6 Hive</h2><h3 id="1-6-1-Hive的架构"><a href="#1-6-1-Hive的架构" class="headerlink" title="1.6.1 Hive的架构"></a>1.6.1 Hive的架构</h3><p><img src="/2020/12/04/some_pit/f8c18c9c9fa3df8aa30d1297184e7406.png"></p>
+<h2 id="1-6-Hive"><a href="#1-6-Hive" class="headerlink" title="1.6 Hive"></a>1.6 Hive</h2><h3 id="1-6-1-Hive的架构"><a href="#1-6-1-Hive的架构" class="headerlink" title="1.6.1 Hive的架构"></a>1.6.1 Hive的架构</h3><p><img src="/2020/12/04/some_pit/f8c18c9c9fa3df8aa30d1297184e7406.png" alt="04d6f8637383ea0dc5752b70e2f93622.png"></p>
 <blockquote>
 <p>  图片</p>
 </blockquote>
@@ -2163,7 +2163,7 @@
 <h5 id="1-13-6-3-2-方案实现思路"><a href="#1-13-6-3-2-方案实现思路" class="headerlink" title="1.13.6.3.2 方案实现思路"></a>1.13.6.3.2 方案实现思路</h5><p>在对RDD执行shuffle算子时，给shuffle算子传入一个参数，比如reduceByKey(1000)，该参数就设置了这个shuffle算子执行时shuffle<br>read task的数量，即spark.sql.shuffle.partitions，该参数代表了shuffle read<br>task的并行度，默认是200，对于很多场景来说都有点过小。</p>
 <h5 id="1-13-6-3-3-方案实现原理"><a href="#1-13-6-3-3-方案实现原理" class="headerlink" title="1.13.6.3.3 方案实现原理"></a>1.13.6.3.3 方案实现原理</h5><p>增加shuffle read<br>task的数量，可以让原本分配给一个task的多个key分配给多个task，从而让每个task处理比原来更少的数据。举例来说，如果原本有5个key，每个key对应10条数据，这5个key都是分配给一个task的，那么这个task就要处理50条数据。</p>
 <p>而增加了shuffle read<br>task以后，每个task就分配到一个key，即每个task就处理10条数据，那么自然每个task的执行时间都会变短了。具体原理如下图所示。</p>
-<p><img src="/2020/12/04/some_pit/66bb55ccd97c524fa13fbf888b94255d.png"></p>
+<p><img src="/2020/12/04/some_pit/66bb55ccd97c524fa13fbf888b94255d.png" alt="66bb55ccd97c524fa13fbf888b94255d.png"></p>
 <h5 id="1-13-6-3-4-方案优缺点"><a href="#1-13-6-3-4-方案优缺点" class="headerlink" title="1.13.6.3.4 方案优缺点"></a>1.13.6.3.4 方案优缺点</h5><p>优点：实现起来比较简单，可以有效缓解和减轻数据倾斜的影响。</p>
 <p>缺点：只是缓解了数据倾斜而已，没有彻底根除问题，根据实践经验来看，其效果有限。</p>
 <h5 id="1-13-6-3-5-方案实践经验"><a href="#1-13-6-3-5-方案实践经验" class="headerlink" title="1.13.6.3.5 方案实践经验"></a>1.13.6.3.5 方案实践经验</h5><p>该方案通常无法彻底解决数据倾斜，因为如果出现一些极端情况，比如某个key对应的数据量有100万，那么无论你的task数量增加到多少，这个对应着100万数据的key肯定还是会分配到一个task中去处理，因此注定还是会发生数据倾斜的。所以这种方案只能说是在发现数据倾斜时尝试使用的第一种手段，尝试去用最简单的方法缓解数据倾斜而已，或者是和其他方案结合起来使用。</p>
@@ -2184,7 +2184,7 @@
 <p>// 第三步，去除RDD中每个key的随机前缀。<br>JavaPairRDD&lt;Long, Long&gt; removedRandomPrefixRdd = localAggrRdd.mapToPair(<br>new PairFunction&lt;Tuple2&lt;String,Long&gt;, Long, Long&gt;() {<br>private static final long serialVersionUID = 1L;<br>@Override<br>public Tuple2&lt;Long, Long&gt; call(Tuple2&lt;String, Long&gt; tuple)<br>throws Exception {<br>long originalKey = Long.valueOf(tuple.<em>1.split(“</em>“)[1]);<br>return new Tuple2&lt;Long, Long&gt;(originalKey, tuple._2);<br>}<br>});  </p>
 <p>// 第四步，对去除了随机前缀的RDD进行全局聚合。<br>JavaPairRDD&lt;Long, Long&gt; globalAggrRdd = removedRandomPrefixRdd.reduceByKey(<br>new Function2&lt;Long, Long, Long&gt;() {<br>private static final long serialVersionUID = 1L;<br>@Override<br>public Long call(Long v1, Long v2) throws Exception {<br>return v1 + v2;<br>}<br>});</p>
 <h5 id="1-13-6-4-3-方案实现原理"><a href="#1-13-6-4-3-方案实现原理" class="headerlink" title="1.13.6.4.3 方案实现原理"></a>1.13.6.4.3 方案实现原理</h5><p>将原本相同的key通过附加随机前缀的方式，变成多个不同的key，就可以让原本被一个task处理的数据分散到多个task上去做局部聚合，进而解决单个task处理数据量过多的问题。接着去除掉随机前缀，再次进行全局聚合，就可以得到最终的结果。具体原理见下图。</p>
-<p><img src="/2020/12/04/some_pit/0413e3961ff5780673df09d46ebc1679.png"></p>
+<p><img src="/2020/12/04/some_pit/0413e3961ff5780673df09d46ebc1679.png" alt="0413e3961ff5780673df09d46ebc1679.png"></p>
 <h5 id="1-13-6-4-4-方案优缺点"><a href="#1-13-6-4-4-方案优缺点" class="headerlink" title="1.13.6.4.4 方案优缺点"></a>1.13.6.4.4 方案优缺点</h5><p>优点<br>对于聚合类的shuffle操作导致的数据倾斜，效果是非常不错的。通常都可以解决掉数据倾斜，或者至少是大幅度缓解数据倾斜，将Spark作业的性能提升数倍以上。</p>
 <p>缺点<br>仅仅适用于聚合类的shuffle操作，适用范围相对较窄。如果是join类的shuffle操作，还得用其他的解决方案。</p>
 <h4 id="1-13-6-5-将reduce-join转为map-join"><a href="#1-13-6-5-将reduce-join转为map-join" class="headerlink" title="1.13.6.5 将reduce join转为map join"></a>1.13.6.5 将reduce join转为map join</h4><h5 id="1-13-6-5-1-方案适用场景"><a href="#1-13-6-5-1-方案适用场景" class="headerlink" title="1.13.6.5.1 方案适用场景"></a>1.13.6.5.1 方案适用场景</h5><p>在对RDD使用join类操作，或者是在Spark<br>SQL中使用join语句时，而且join操作中的一个RDD或表的数据量比较小（比如几百M或者一两G），比较适用此方案。</p>
@@ -2196,7 +2196,7 @@
 <p>// 这里得提示一下。<br>// 上面的做法，仅仅适用于rdd1中的key没有重复，全部是唯一的场景。<br>//<br>如果rdd1中有多个相同的key，那么就得用flatMap类的操作，在进行join的时候不能用map，而是得遍历rdd1所有数据进行join。<br>// rdd2中每条数据都可能会返回多条join后的数据。</p>
 <h5 id="1-13-6-5-3-方案实现原理"><a href="#1-13-6-5-3-方案实现原理" class="headerlink" title="1.13.6.5.3 方案实现原理"></a>1.13.6.5.3 方案实现原理</h5><p>普通的join是会走shuffle过程的，而一旦shuffle，就相当于会将相同key的数据拉取到一个shuffle<br>read task中再进行join，此时就是reduce join。</p>
 <p>但是如果一个RDD是比较小的，则可以采用广播小RDD全量数据+map算子来实现与join同样的效果，也就是map<br>join，此时就不会发生shuffle操作，也就不会发生数据倾斜。具体原理如下图所示。</p>
-<p><img src="/2020/12/04/some_pit/9010c275399ee03d0de99aaae438f409.png"></p>
+<p><img src="/2020/12/04/some_pit/9010c275399ee03d0de99aaae438f409.png" alt="9010c275399ee03d0de99aaae438f409.png"></p>
 <h5 id="1-13-6-5-4-方案优缺点"><a href="#1-13-6-5-4-方案优缺点" class="headerlink" title="1.13.6.5.4 方案优缺点"></a>1.13.6.5.4 方案优缺点</h5><p>优点：对join操作导致的数据倾斜，效果非常好，因为根本就不会发生shuffle，也就根本不会发生数据倾斜。</p>
 <p>缺点：适用场景较少，因为这个方案只适用于一个大表和一个小表的情况。毕竟我们需要将小表进行广播，此时会比较消耗内存资源，driver和每个Executor内存中都会驻留一份小RDD的全量数据。如果我们广播出去的RDD数据比较大，比如10G以上，那么就可能发生内存溢出了。因此并不适合两个都是大表的情况。</p>
 <h4 id="1-13-6-6-采样倾斜key并分拆join操作"><a href="#1-13-6-6-采样倾斜key并分拆join操作" class="headerlink" title="1.13.6.6 采样倾斜key并分拆join操作"></a>1.13.6.6 采样倾斜key并分拆join操作</h4><h5 id="1-13-6-6-1-方案适用场景"><a href="#1-13-6-6-1-方案适用场景" class="headerlink" title="1.13.6.6.1 方案适用场景"></a>1.13.6.6.1 方案适用场景</h5><p>两个RDD/Hive表进行join的时候，如果数据量都比较大，无法采用“解决方案五”，那么此时可以看一下两个RDD/Hive表中的key分布情况。</p>
@@ -2224,7 +2224,7 @@
 <p>// 将rdd1中分拆出来的包含普通key的独立rdd，直接与rdd2进行join。<br>JavaPairRDD&lt;Long, Tuple2&lt;String, Row&gt;&gt; joinedRDD2 = commonRDD.join(rdd2);  </p>
 <p>// 将倾斜key join后的结果与普通key join后的结果，uinon起来。<br>// 就是最终的join结果。<br>JavaPairRDD&lt;Long, Tuple2&lt;String, Row&gt;&gt; joinedRDD =<br>joinedRDD1.union(joinedRDD2);</p>
 <h5 id="1-13-6-6-3-方案实现原理"><a href="#1-13-6-6-3-方案实现原理" class="headerlink" title="1.13.6.6.3 方案实现原理"></a>1.13.6.6.3 方案实现原理</h5><p>对于join导致的数据倾斜，如果只是某几个key导致了倾斜，可以将少数几个key分拆成独立RDD，并附加随机前缀打散成n份去进行join，此时这几个key对应的数据就不会集中在少数几个task上，而是分散到多个task进行join了。具体原理见下图。</p>
-<p><img src="/2020/12/04/some_pit/37dade51eedfda4a2b3f0f776e2017b9.png"></p>
+<p><img src="/2020/12/04/some_pit/37dade51eedfda4a2b3f0f776e2017b9.png" alt="37dade51eedfda4a2b3f0f776e2017b9.png"></p>
 <h5 id="1-13-6-6-4-方案优缺点"><a href="#1-13-6-6-4-方案优缺点" class="headerlink" title="1.13.6.6.4 方案优缺点"></a>1.13.6.6.4 方案优缺点</h5><p>优点：对于join导致的数据倾斜，如果只是某几个key导致了倾斜，采用该方式可以用最有效的方式打散key进行join。而且只需要针对少数倾斜key对应的数据进行扩容n倍，不需要对全量数据进行扩容。避免了占用过多内存。</p>
 <p>缺点：如果导致倾斜的key特别多的话，比如成千上万个key都导致数据倾斜，那么这种方式也不适合。</p>
 <h4 id="1-13-6-7-使用随机前缀和扩容RDD进行join"><a href="#1-13-6-7-使用随机前缀和扩容RDD进行join" class="headerlink" title="1.13.6.7 使用随机前缀和扩容RDD进行join"></a>1.13.6.7 使用随机前缀和扩容RDD进行join</h4><h5 id="1-13-6-7-1-方案适用场景"><a href="#1-13-6-7-1-方案适用场景" class="headerlink" title="1.13.6.7.1 方案适用场景"></a>1.13.6.7.1 方案适用场景</h5><p>如果在进行join操作时，RDD中有大量的key导致数据倾斜，那么进行分拆key也没什么意义，此时就只能使用最后一种方案来解决问题了。</p>
@@ -2247,7 +2247,7 @@
 <p>其次可以对某些shuffle操作提升并行度，优化其性能；</p>
 <p>最后还可以针对不同的聚合或join操作，选择一种方案来优化其性能。</p>
 <p>大家需要对这些方案的思路和原理都透彻理解之后，在实践中根据各种不同的情况，灵活运用多种方案，来解决自己的数据倾斜问题。</p>
-<h3 id="1-13-7-Spark数据倾斜处理小结"><a href="#1-13-7-Spark数据倾斜处理小结" class="headerlink" title="1.13.7 Spark数据倾斜处理小结"></a>1.13.7 Spark数据倾斜处理小结</h3><p><img src="/2020/12/04/some_pit/7f8113d89efd447800e3120aaa6d39e0.png"></p>
+<h3 id="1-13-7-Spark数据倾斜处理小结"><a href="#1-13-7-Spark数据倾斜处理小结" class="headerlink" title="1.13.7 Spark数据倾斜处理小结"></a>1.13.7 Spark数据倾斜处理小结</h3><p><img src="/2020/12/04/some_pit/7f8113d89efd447800e3120aaa6d39e0.png" alt="7f8113d89efd447800e3120aaa6d39e0.png"></p>
 <h2 id="1-14-Flink"><a href="#1-14-Flink" class="headerlink" title="1.14 Flink"></a>1.14 Flink</h2><h3 id="1-14-1-简单介绍一下-Flink"><a href="#1-14-1-简单介绍一下-Flink" class="headerlink" title="1.14.1 简单介绍一下 Flink"></a>1.14.1 简单介绍一下 Flink</h3><p>Flink 是一个框架和分布式处理引擎，用于对无界和有界数据流进行有状态计算。并且<br>Flink<br>提供了数据分布、容错机制以及资源管理等核心功能。Flink提供了诸多高抽象层的API以便用户编写分布式任务：</p>
 <p>DataSet API，<br>对静态数据进行批处理操作，将静态数据抽象成分布式的数据集，用户可以方便地使用Flink提供的各种操作符对分布式数据集进行处理，支持Java、Scala和Python。</p>
 <p>DataStream<br>API，对数据流进行流处理操作，将流式的数据抽象成分布式的数据流，用户可以方便地对分布式数据流进行各种操作，支持Java和Scala。</p>
@@ -2640,15 +2640,15 @@
 </tr>
 </tbody></table>
 <p>根据维度建模中的星型模型思想，将维度进行退化。例如下图所示：地区表和省份表退化为地区维度表，商品表、品类表、spu表、商品三级分类、商品二级分类、商品一级分类表退化为商品维度表，活动信息表和活动规则表退化为活动维度表。</p>
-<p><img src="/2020/12/04/some_pit/8fe184a75c53c34a7930305d76d2bb27.png"></p>
+<p><img src="/2020/12/04/some_pit/8fe184a75c53c34a7930305d76d2bb27.png" alt="8fe184a75c53c34a7930305d76d2bb27.png"></p>
 <p>至此，数仓的维度建模已经完毕，DWS、DWT和ADS和维度建模已经没有关系了。</p>
 <p>DWS和DWT都是建宽表，宽表都是按照主题去建。主题相当于观察问题的角度。对应着维度表。</p>
 <h3 id="3-1-4-DWS层"><a href="#3-1-4-DWS层" class="headerlink" title="3.1.4 DWS层"></a>3.1.4 DWS层</h3><p>DWS层统计各个主题对象的当天行为，服务于DWT层的主题宽表。如图所示，DWS层的宽表字段，是站在不同维度的视角去看事实表，重点关注事实表的度量值，通过与之关联的事实表，获得不同的事实表的度量值。</p>
-<p><img src="/2020/12/04/some_pit/254f0eb40a8434abd9e2a7f1dd62e1f0.png"></p>
+<p><img src="/2020/12/04/some_pit/254f0eb40a8434abd9e2a7f1dd62e1f0.png" alt="254f0eb40a8434abd9e2a7f1dd62e1f0.png"></p>
 <h3 id="3-1-5-DWT层"><a href="#3-1-5-DWT层" class="headerlink" title="3.1.5 DWT层"></a>3.1.5 DWT层</h3><p>以分析的<strong>主题对象</strong>为建模驱动，基于上层的应用和产品的指标需求，构建主题对象的全量宽表。</p>
 <p>DWT层主题宽表都记录什么字段？</p>
 <p>如图所示，每个维度关联的不同事实表度量值以及首次、末次时间、累积至今的度量值、累积某个时间段的度量值。</p>
-<p><img src="/2020/12/04/some_pit/79b7ad6ae2caacb327e961afbfd86088.png"></p>
+<p><img src="/2020/12/04/some_pit/79b7ad6ae2caacb327e961afbfd86088.png" alt="79b7ad6ae2caacb327e961afbfd86088.png"></p>
 <h3 id="3-1-6-ADS层"><a href="#3-1-6-ADS层" class="headerlink" title="3.1.6 ADS层"></a>3.1.6 ADS层</h3><p>分别对设备主题、会员主题、商品主题和营销主题进行指标分析，其中营销主题是用户主题和商品主题的跨主题分析案例</p>
 <h2 id="3-2-ODS层做了哪些事？"><a href="#3-2-ODS层做了哪些事？" class="headerlink" title="3.2 ODS层做了哪些事？"></a>3.2 ODS层做了哪些事？</h2><p>1）保持数据原貌，不做任何修改</p>
 <p>2）压缩采用LZO，压缩比是100g数据压缩完10g左右。</p>
@@ -2789,7 +2789,7 @@
 </blockquote>
 <h2 id="3-5-ADS层分析过哪些指标"><a href="#3-5-ADS层分析过哪些指标" class="headerlink" title="3.5 ADS层分析过哪些指标"></a>3.5 ADS层分析过哪些指标</h2><h3 id="3-5-1-分析过的指标（一分钟至少说出30个指标）"><a href="#3-5-1-分析过的指标（一分钟至少说出30个指标）" class="headerlink" title="3.5.1 分析过的指标（一分钟至少说出30个指标）"></a>3.5.1 分析过的指标（一分钟至少说出30个指标）</h3><p>日活、月活、周活、留存、留存率、新增（日、周、年）、转化率、流失、回流、七天内连续3天登录（点赞、收藏、评价、购买、加购、下单、活动）、连续3周（月）登录、GMV、复购率、复购率排行、点赞、评论、收藏、领优惠价人数、使用优惠价、沉默、值不值得买、退款人数、退款率<br>topn 热门商品</p>
 <p>产品经理最关心的：留转G复活</p>
-<p><img src="/2020/12/04/some_pit/5679bb92e2b4f5ffac2449271c1ece9c.png"></p>
+<p><img src="/2020/12/04/some_pit/5679bb92e2b4f5ffac2449271c1ece9c.png" alt="5679bb92e2b4f5ffac2449271c1ece9c.png"></p>
 <h3 id="3-5-2-留转G复活指标"><a href="#3-5-2-留转G复活指标" class="headerlink" title="3.5.2 留转G复活指标"></a>3.5.2 留转G复活指标</h3><p>（1）活跃</p>
 <blockquote>
 <p>  日活：100万 ；月活：是日活的2-3倍 300万</p>
@@ -3280,7 +3280,7 @@
 </blockquote>
 <h2 id="4-3-电商业务流程"><a href="#4-3-电商业务流程" class="headerlink" title="4.3 电商业务流程"></a>4.3 电商业务流程</h2><p>1）记住表与表之间的关系</p>
 <p>2）每个表记住2-3个字段</p>
-<p><img src="/2020/12/04/some_pit/25d5316135ceba9902305941ace34c7d.png"></p>
+<p><img src="/2020/12/04/some_pit/25d5316135ceba9902305941ace34c7d.png" alt="25d5316135ceba9902305941ace34c7d.png"></p>
 <h2 id="4-4-维度表和事实表（重点）"><a href="#4-4-维度表和事实表（重点）" class="headerlink" title="4.4 维度表和事实表（重点）"></a>4.4 维度表和事实表（重点）</h2><h3 id="4-4-1-维度表"><a href="#4-4-1-维度表" class="headerlink" title="4.4.1 维度表"></a>4.4.1 维度表</h3><p><strong>维度表</strong>：一般是对事实的<strong>描述信息</strong>。每一张维表对应现实世界中的一个对象或者概念。<br>例如：用户、商品、日期、地区等。</p>
 <h3 id="4-4-2-事实表"><a href="#4-4-2-事实表" class="headerlink" title="4.4.2 事实表"></a>4.4.2 事实表</h3><p><strong>事实表中的每行数据代表一个业务事件（下单、支付、退款、评价等）</strong>。“事实”这个术语表示的是业务事件的<strong>度量值（可统计次数、个数、件数、金额等）</strong>，例如，订单事件中的下单金额。</p>
 <p>每一个事实表的行包括：具有可加性的数值型的度量值、与维表相连接的外键、通常具有两个和两个以上的外键、外键之间表示维表之间多对多的关系。</p>
@@ -3429,7 +3429,7 @@
 <p>Spark数据倾斜</p>
 <p>Spark优化</p>
 <p>SparkStreaming精确一次性消费</p>
-<h2 id="6-4-Linux-Shell-Hadoop-ZK-Flume-kafka-Hive-Sqoop-Azkaban那些事"><a href="#6-4-Linux-Shell-Hadoop-ZK-Flume-kafka-Hive-Sqoop-Azkaban那些事" class="headerlink" title="6.4 Linux+Shell+Hadoop+ZK+Flume+kafka+Hive+Sqoop+Azkaban那些事"></a>6.4 Linux+Shell+Hadoop+ZK+Flume+kafka+Hive+Sqoop+Azkaban那些事</h2><p><img src="/2020/12/04/some_pit/9deae070925650ce648410e6adb5115a.png"></p>
+<h2 id="6-4-Linux-Shell-Hadoop-ZK-Flume-kafka-Hive-Sqoop-Azkaban那些事"><a href="#6-4-Linux-Shell-Hadoop-ZK-Flume-kafka-Hive-Sqoop-Azkaban那些事" class="headerlink" title="6.4 Linux+Shell+Hadoop+ZK+Flume+kafka+Hive+Sqoop+Azkaban那些事"></a>6.4 Linux+Shell+Hadoop+ZK+Flume+kafka+Hive+Sqoop+Azkaban那些事</h2><p><img src="/2020/12/04/some_pit/9deae070925650ce648410e6adb5115a.png" alt="9deae070925650ce648410e6adb5115a.png"></p>
 <h1 id="第7章-生产经验—热点问题"><a href="#第7章-生产经验—热点问题" class="headerlink" title="第7章 生产经验—热点问题"></a>第7章 生产经验—热点问题</h1><h2 id="7-1-元数据管理（Atlas血缘系统）"><a href="#7-1-元数据管理（Atlas血缘系统）" class="headerlink" title="7.1 元数据管理（Atlas血缘系统）"></a>7.1 元数据管理（Atlas血缘系统）</h2><p>依赖关系能够做到：表级别和字段级别</p>
 <p>用处：作业执行失败，评估他的影响范围。 主要用于表比较多的公司。</p>
 <p>版本问题：</p>
